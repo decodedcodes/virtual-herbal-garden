@@ -1,0 +1,173 @@
+{
+    "asset": {
+        "version": "2.0",
+        "generator": "Open Asset Import Library (assimp v5.4.0)"
+    },
+    "extensionsUsed": [
+        "KHR_materials_volume",
+        "FB_ngon_encoding"
+    ],
+    "accessors": [
+        {
+            "bufferView": 0,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 167149,
+            "type": "VEC3",
+            "max": [
+                0.9997760057449341,
+                0.692454993724823,
+                0.9017339944839478
+            ],
+            "min": [
+                -0.9997869729995728,
+                -0.6916710138320923,
+                -0.9101790189743042
+            ]
+        },
+        {
+            "bufferView": 1,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 167149,
+            "type": "VEC3",
+            "max": [
+                0.9999980330467224,
+                0.9999996423721313,
+                0.9999998807907104
+            ],
+            "min": [
+                -0.9999986290931702,
+                -0.9999997019767761,
+                -0.9999991655349731
+            ]
+        },
+        {
+            "bufferView": 2,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 167149,
+            "type": "VEC2",
+            "max": [
+                1.0,
+                1.0
+            ],
+            "min": [
+                0.00012874603271484375,
+                0.000028014183044433594
+            ]
+        },
+        {
+            "bufferView": 3,
+            "byteOffset": 0,
+            "componentType": 5125,
+            "count": 837393,
+            "type": "SCALAR",
+            "max": [
+                167148
+            ],
+            "min": [
+                0
+            ]
+        }
+    ],
+    "buffers": [
+        {
+            "byteLength": 8698340,
+            "uri": "Mucuna_pruriens_low__0326064057_texture_0.bin"
+        }
+    ],
+    "bufferViews": [
+        {
+            "buffer": 0,
+            "byteOffset": 0,
+            "byteLength": 2005788,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 2005788,
+            "byteLength": 2005788,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 4011576,
+            "byteLength": 1337192,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 5348768,
+            "byteLength": 3349572,
+            "target": 34963
+        }
+    ],
+    "images": [
+        {
+            "uri": "textures/image_0.png"
+        }
+    ],
+    "materials": [
+        {
+            "name": "Mat_1",
+            "pbrMetallicRoughness": {
+                "baseColorTexture": {
+                    "index": 0
+                },
+                "metallicFactor": 0.0,
+                "roughnessFactor": 0.800000011920929
+            },
+            "doubleSided": true
+        }
+    ],
+    "meshes": [
+        {
+            "name": "meshes[0]",
+            "primitives": [
+                {
+                    "mode": 4,
+                    "material": 0,
+                    "indices": 3,
+                    "attributes": {
+                        "POSITION": 0,
+                        "NORMAL": 1,
+                        "TEXCOORD_0": 2
+                    }
+                }
+            ]
+        }
+    ],
+    "nodes": [
+        {
+            "name": "Mucuna_pruriens_low__0326064057_texture",
+            "children": [
+                1
+            ]
+        },
+        {
+            "name": "mesh_0",
+            "mesh": 0
+        }
+    ],
+    "samplers": [
+        {
+            "magFilter": 9729,
+            "minFilter": 9987
+        }
+    ],
+    "scenes": [
+        {
+            "nodes": [
+                0
+            ]
+        }
+    ],
+    "textures": [
+        {
+            "source": 0,
+            "sampler": 0
+        }
+    ],
+    "scene": 0
+}

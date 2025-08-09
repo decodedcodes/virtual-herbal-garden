@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Herbal Prescription Quiz</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+
+<body class="bg-gray-100 p-10">
+    <div class="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-lg">
+        <h2 class="text-3xl font-bold text-green-600 text-center mb-6">🌿 Advanced Herbal & Homely Prescription Quiz</h2>
+
+        <!-- Quiz Section -->
+        <div id="quiz-container">
+            <div id="question-container" class="mb-4 text-lg font-semibold text-gray-700">
+                What symptom are you experiencing?
+            </div>
+
+            <!-- Options -->
+            <div id="options-container" class="space-y-2">
+                <button class="option-btn bg-green-500 text-white py-2 px-4 rounded w-full text-left"
+                    onclick="nextQuestion('fever')">Fever</button>
+                <button class="option-btn bg-green-500 text-white py-2 px-4 rounded w-full text-left"
+                    onclick="nextQuestion('cold')">Cold & Flu</button>
+                <button class="option-btn bg-green-500 text-white py-2 px-4 rounded w-full text-left"
+                    onclick="nextQuestion('cough')">Cough</button>
+                <button class="option-btn bg-green-500 text-white py-2 px-4 rounded w-full text-left"
+                    onclick="nextQuestion('indigestion')">Indigestion</button>
+                <button class="option-btn bg-green-500 text-white py-2 px-4 rounded w-full text-left"
+                    onclick="nextQuestion('arthritis')">Arthritis</button>
+                <button class="option-btn bg-green-500 text-white py-2 px-4 rounded w-full text-left"
+                    onclick="nextQuestion('allergies')">Skin Allergies</button>
+                <button class="option-btn bg-green-500 text-white py-2 px-4 rounded w-full text-left"
+                    onclick="nextQuestion('headache')">Headache</button>
+                <button class="option-btn bg-green-500 text-white py-2 px-4 rounded w-full text-left"
+                    onclick="nextQuestion('diabetes')">Diabetes</button>
+                <button class="option-btn bg-green-500 text-white py-2 px-4 rounded w-full text-left"
+                    onclick="nextQuestion('hypertension')">Hypertension</button>
+                <button class="option-btn bg-green-500 text-white py-2 px-4 rounded w-full text-left"
+                    onclick="nextQuestion('stress')">Stress & Anxiety</button>
+                <!-- <button class="option-btn bg-green-500 text-white py-2 px-4 rounded w-full text-left"
+                    onclick="nextQuestion('asthma')">Respiratory Issues</button> -->
+                <button class="option-btn bg-green-500 text-white py-2 px-4 rounded w-full text-left"
+                    onclick="nextQuestion('pcos')">PCOS/PCOD</button>
+                <button class="option-btn bg-green-500 text-white py-2 px-4 rounded w-full text-left"
+                    onclick="nextQuestion('menstrual')">Menstrual Pain Relief</button>
+                <button class="option-btn bg-green-500 text-white py-2 px-4 rounded w-full text-left"
+                    onclick="nextQuestion('uti')">Urinary Tract Infection (UTI)</button>
+                <button class="option-btn bg-green-500 text-white py-2 px-4 rounded w-full text-left"
+                    onclick="nextQuestion('thyroid')">Thyroid Imbalance</button>
+                <button class="option-btn bg-green-500 text-white py-2 px-4 rounded w-full text-left"
+                    onclick="nextQuestion('reflux')">Acid Reflux</button>
+                <button class="option-btn bg-green-500 text-white py-2 px-4 rounded w-full text-left"
+                    onclick="nextQuestion('weight')">Obesity/Weight Loss</button>
+                <button class="option-btn bg-green-500 text-white py-2 px-4 rounded w-full text-left"
+                    onclick="nextQuestion('joint')">Joint Pain</button>
+                <button class="option-btn bg-green-500 text-white py-2 px-4 rounded w-full text-left"
+                    onclick="nextQuestion('liver')">Liver Detox</button>
+                <button class="option-btn bg-green-500 text-white py-2 px-4 rounded w-full text-left"
+                    onclick="nextQuestion('eye')">Eye Strain/Dry Eyes</button>
+            </div>
+        </div>
+
+        <!-- Result Section -->
+        <div id="result-container" class="hidden mt-6 bg-green-50 border-l-4 border-green-500 p-4 rounded-lg">
+            <h3 class="text-xl font-bold text-green-600">🌱 Personalized Prescription Generated!</h3>
+            <p id="prescription" class="mt-2 text-gray-700"></p>
+
+            <!-- PDF Download Button -->
+            <button onclick="generatePDF()"
+                class="mt-4 bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+                📄 Download Prescription as PDF
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Dosage Information
+        const dosageInfo = {
+            fever: "1 cup 2 times daily after meals.",
+            cold: "1 cup, 2 times daily for 3 days.",
+            cough: "1 tsp of syrup, 2 times daily.",
+            indigestion: "1 glass before meals.",
+            arthritis: "1 tsp of herbal oil for massage, twice daily.",
+            allergies: "Apply 2 times daily for 7 days.",
+            headache: "1 cup of tea, 2 times as needed.",
+            diabetes: "1 glass before breakfast daily.",
+            hypertension: "1 cup daily before bedtime.",
+            stress: "1 cup, twice daily after meals.",
+            pcos: "1 cup, 2 times daily for 6 weeks.",
+            menstrual: "1 glass of decoction, twice daily during periods.",
+            uti: "1 glass of herbal juice, 2 times daily for 5 days.",
+            thyroid: "1 tsp of herbal powder with warm water, daily.",
+            reflux: "1 glass before meals.",
+            weight: "1 cup before bedtime for 4 weeks.",
+            joint: "Apply 2 times daily for 7 days.",
+            liver: "1 glass daily on an empty stomach for 2 weeks.",
+            eye: "Apply 2-3 drops before sleeping."
+        };
+
+        // Question-Tree
+        const questions = {
+            fever: {
+                question: "Do you have a headache with the fever?",
+                options: {
+                    yes: {
+                        question: "Do you also have chills?",
+                        options: {
+                            yes: "Take Ginger + Mint Tea with Turmeric for chills and headache.",
+                            no: "Use Tulsi + Pepper Decoction to reduce headache and fever."
+                        }
+                    },
+                    no: {
+                        question: "Do you feel fatigued?",
+                        options: {
+                            yes: "Drink Ginger + Honey Decoction for mild fever.",
+                            no: "Use Tulsi + Ginger Tea for general fever relief."
+                        }
+                    }
+                }
+            },
+            cold: {
+                question: "Do you have a sore throat?",
+                options: {
+                    yes: {
+                        question: "Is there nasal congestion?",
+                        options: {
+                            yes: "Use Peppermint + Honey Tea for nasal relief.",
+                            no: "Drink Tulsi + Mulethi + Honey Tea to strengthen immunity."
+                        }
+                    },
+                    no: {
+                        question: "Do you have body aches or fatigue?",
+                        options: {
+                            yes: "Drink Tulsi + Mulethi + Honey Tea to boost immunity and reduce fatigue.",
+                            no: "Use Lemon + Ginger + Honey Tea for immunity boost and mild cold."
+                        }
+                    }
+                }
+            },
+            cough: {
+                question: "Is it a dry or wet cough?",
+                options: {
+                    dry: {
+                        question: "Is your throat irritated?",
+                        options: {
+                            yes: "Take Licorice + Mulethi Tea for dry cough relief.",
+                            no: "Use Tulsi + Ginger Decoction for dry cough relief."
+                        }
+                    },
+                    wet: {
+                        question: "Is there mucus with the cough?",
+                        options: {
+                            yes: "Use Basil + Ginger Decoction for wet cough and mucus removal.",
+                            no: "Take Mulethi + Honey Brew for soothing relief."
+                        }
+                    }
+                }
+            },
+            indigestion: {
+                question: "Do you experience bloating or acidity?",
+                options: {
+                    bloating: {
+                        question: "Do you feel full after eating?",
+                        options: {
+                            yes: "Drink Fennel + Mint Water to ease digestion.",
+                            no: "Use Ginger + Lemon Tea for digestive support."
+                        }
+                    },
+                    acidity: {
+                        question: "Do you have heartburn?",
+                        options: {
+                            yes: "Use Aloe Vera + Coriander Juice to reduce acidity.",
+                            no: "Drink Chamomile Tea for soothing effects."
+                        }
+                    }
+                }
+            },
+            arthritis: {
+                question: "What type of arthritis are you experiencing?",
+                options: {
+                    rheumatoid: {
+                        question: "Do you experience morning stiffness?",
+                        options: {
+                            yes: "Take Turmeric + Boswellia + Ashwagandha for inflammation control.",
+                            no: "Use Ginger + Neem Decoction for pain relief."
+                        }
+                    },
+                    osteoarthritis: {
+                        question: "Do you experience pain while walking?",
+                        options: {
+                            yes: "Apply Moringa + Ginger Oil Massage for pain relief.",
+                            no: "Consume Turmeric + Milk before bed to reduce inflammation."
+                        }
+                    },
+                    gout: {
+                        question: "Do you have swelling or redness?",
+                        options: {
+                            yes: "Consume Celery Seed + Apple Cider Vinegar for uric acid balance.",
+                            no: "Drink Nettle Tea + Coriander Water for gout control."
+                        }
+                    }
+                }
+            },
+            allergies: {
+                question: "What type of skin allergy are you experiencing?",
+                options: {
+                    itching: {
+                        question: "Is it persistent or occasional?",
+                        options: {
+                            persistent: "Apply Neem + Aloe Vera Gel for long-term itching relief.",
+                            occasional: "Use Turmeric + Coconut Oil for occasional itching."
+                        }
+                    },
+                    eczema: {
+                        question: "Is it dry or oozing eczema?",
+                        options: {
+                            dry: "Use Coconut Oil + Turmeric Paste to moisturize and soothe.",
+                            oozing: "Apply Aloe Vera + Neem Oil to dry oozing patches."
+                        }
+                    },
+                    acne: {
+                        question: "Is it hormonal or bacterial acne?",
+                        options: {
+                            hormonal: "Consume Spearmint Tea + Turmeric for hormonal acne.",
+                            bacterial: "Apply Tea Tree Oil + Basil Paste to control bacteria."
+                        }
+                    }
+                }
+            },
+            headache: {
+                question: "What type of headache do you have?",
+                options: {
+                    migraine: {
+                        question: "Do you experience nausea?",
+                        options: {
+                            yes: "Take Brahmi + Ashwagandha Tea to relieve migraine pain.",
+                            no: "Use Peppermint Oil for headache relief."
+                        }
+                    },
+                    tension: {
+                        question: "Is it stress-related?",
+                        options: {
+                            yes: "Drink Chamomile Tea + Lavender Oil for relaxation.",
+                            no: "Use Eucalyptus Oil for tension relief."
+                        }
+                    },
+                    sinusitis: {
+                        question: "Do you have nasal congestion?",
+                        options: {
+                            yes: "Use Eucalyptus Steam + Tulsi Decoction for sinus relief.",
+                            no: "Drink Ginger Tea for general headache relief."
+                        }
+                    }
+                }
+            },
+            diabetes: {
+                question: "Is your sugar level high or low?",
+                options: {
+                    high: {
+                        question: "Do you experience frequent urination?",
+                        options: {
+                            yes: "Consume Bitter Gourd Juice + Fenugreek Powder.",
+                            no: "Drink Amla Juice + Cinnamon for maintaining sugar levels."
+                        }
+                    },
+                    low: {
+                        question: "Do you feel fatigued often?",
+                        options: {
+                            yes: "Take Dates + Ashwagandha for energy boost and sugar balance.",
+                            no: "Consume Moringa + Tulsi Water to maintain sugar stability."
+                        }
+                    }
+                }
+            },
+            hypertension: {
+                question: "Do you feel anxious or restless?",
+                options: {
+                    yes: {
+                        question: "Do you experience palpitations?",
+                        options: {
+                            yes: "Drink Ashwagandha + Brahmi Tea for calmness.",
+                            no: "Use Tulsi + Hibiscus Tea to control blood pressure."
+                        }
+                    },
+                    no: {
+                        question: "Is your blood pressure consistently high?",
+                        options: {
+                            yes: "Take Garlic + Hibiscus Decoction to regulate high BP.",
+                            no: "Consume Lemon + Honey Water to maintain healthy BP."
+                        }
+                    }
+                }
+            },
+            stress: {
+                question: "Are you experiencing anxiety or fatigue?",
+                options: {
+                    anxiety: {
+                        question: "Do you have trouble sleeping?",
+                        options: {
+                            yes: "Use Brahmi + Chamomile Tea before bed for better sleep.",
+                            no: "Drink Tulsi + Ashwagandha Tea to calm the mind."
+                        }
+                    },
+                    fatigue: {
+                        question: "Do you feel physically drained or mentally drained?",
+                        options: {
+                            physically: "Take Moringa + Shatavari for physical energy.",
+                            mentally: "Consume Ashwagandha + Tulsi for mental rejuvenation."
+                        }
+                    }
+                }
+            },
+            pcos: {
+    question: "What is the primary concern of your PCOS?",
+    options: {
+        irregular: {
+            question: "Do you also experience weight gain or acne?",
+            options: {
+                weight_gain: "Drink Cinnamon + Flaxseed Powder + Triphala to balance hormones and reduce weight.",
+                acne: "Use Neem + Aloe Vera Gel + Spearmint Tea for acne control."
+            }
+        },
+        infertility: {
+            question: "Have you tried natural remedies before?",
+            options: {
+                yes: "Use Aloe Vera + Honey along with Ashwagandha for fertility improvement.",
+                no: "Start with Aloe Vera + Honey for fertility enhancement."
+            }
+        }
+    }
+},
+menstrual: {
+    question: "Do you experience heavy bleeding or severe cramps?",
+    options: {
+        cramps: {
+            question: "Do the cramps last more than 2 days?",
+            options: {
+                yes: "Take Ginger + Turmeric + Honey along with Fennel Tea for extended pain relief.",
+                no: "Use Chamomile + Peppermint Tea for mild cramps."
+            }
+        },
+        bleeding: {
+            question: "Do you also experience weakness or dizziness?",
+            options: {
+                yes: "Use Aloe Vera + Papaya Leaf Juice + Iron Supplements for recovery.",
+                no: "Drink Aloe Vera + Papaya Leaf Juice for heavy bleeding control."
+            }
+        }
+    }
+},
+uti: {
+    question: "What is your primary UTI symptom?",
+    options: {
+        burning: {
+            question: "Does the burning sensation occur frequently?",
+            options: {
+                yes: "Consume Cranberry Juice + Neem Extract + Coriander Seed Water for long-term UTI relief.",
+                no: "Take Cranberry Juice + Neem Extract for immediate relief."
+            }
+        },
+        frequent: {
+            question: "Do you also experience pain during urination?",
+            options: {
+                yes: "Use Coriander Seed Water + Cumin + Turmeric to ease pain and reduce frequency.",
+                no: "Drink Coriander Seed Water + Cumin for frequent urination."
+            }
+        },
+        abdominal: {
+            question: "Do you experience nausea or fever along with pain?",
+            options: {
+                yes: "Drink Aloe Vera + Turmeric + Giloy for complete infection control.",
+                no: "Use Aloe Vera + Turmeric for localized pain relief."
+            }
+        }
+    }
+},
+thyroid: {
+    question: "Do you have hypothyroidism or hyperthyroidism?",
+    options: {
+        hypothyroidism: {
+            question: "Do you also experience fatigue or weight gain?",
+            options: {
+                fatigue: "Take Ashwagandha + Kelp + Zinc along with Triphala for energy boost.",
+                weight_gain: "Consume Ashwagandha + Flaxseed Powder for weight management."
+            }
+        },
+        hyperthyroidism: {
+            question: "Do you experience anxiety or rapid heartbeat?",
+            options: {
+                anxiety: "Use Bugleweed + Lemon Balm + Brahmi for stress relief and thyroid control.",
+                rapid_heartbeat: "Take Bugleweed + Lemon Balm to control rapid heartbeat."
+            }
+        }
+    }
+},
+reflux: {
+    question: "Do you experience acid reflux after eating heavy meals?",
+    options: {
+        yes: {
+            question: "Do you experience heartburn at night?",
+            options: {
+                yes: "Drink Aloe Vera Juice + Licorice + Chamomile before bedtime.",
+                no: "Use Aloe Vera Juice + Licorice after meals to reduce acidity."
+            }
+        },
+        no: {
+            question: "Do you also feel bloated after eating?",
+            options: {
+                yes: "Use Ginger + Honey Decoction + Fennel Water to ease bloating.",
+                no: "Drink Ginger + Honey Decoction for mild acidity relief."
+            }
+        }
+    }
+},
+weight: {
+    question: "What is your primary goal for weight loss?",
+    options: {
+        detox: {
+            question: "Do you prefer a liquid detox or a fiber-based detox?",
+            options: {
+                liquid: "Drink Lemon + Ginger + Honey Water + Aloe Vera for a liquid detox.",
+                fiber: "Consume Psyllium Husk + Triphala Powder to boost metabolism."
+            }
+        },
+        metabolism: {
+            question: "Do you also want to control appetite?",
+            options: {
+                yes: "Take Green Tea + Triphala + Fenugreek to control appetite and boost metabolism.",
+                no: "Use Green Tea + Triphala Powder for metabolism boost."
+            }
+        }
+    }
+},
+joint: {
+    question: "Do you have stiffness or swelling in the joints?",
+    options: {
+        stiffness: {
+            question: "Is the stiffness worse in the morning or after activity?",
+            options: {
+                morning: "Apply Castor Oil + Turmeric Paste + Warm Compress in the morning.",
+                activity: "Use Moringa Oil + Neem Paste after activity for relief."
+            }
+        },
+        swelling: {
+            question: "Is there any redness or warmth in the joint?",
+            options: {
+                yes: "Use Moringa + Neem Oil + Aloe Vera for swelling and redness control.",
+                no: "Apply Moringa + Neem Oil to reduce swelling."
+            }
+        }
+    }
+},
+liver: {
+    question: "Do you need liver detox for cleansing or fatty liver?",
+    options: {
+        cleanse: {
+            question: "Do you prefer herbal juice or decoction?",
+            options: {
+                juice: "Take Aloe Vera + Amla Juice for liver detox.",
+                decoction: "Use Neem + Turmeric Decoction to cleanse the liver."
+            }
+        },
+        fatty_liver: {
+            question: "Do you also experience digestive issues?",
+            options: {
+                yes: "Use Milk Thistle + Dandelion Tea + Fennel Water for liver and digestive health.",
+                no: "Drink Milk Thistle + Dandelion Tea for fatty liver control."
+            }
+        }
+    }
+},
+eye: {
+    question: "Are you experiencing dry eyes or strain from screens?",
+    options: {
+        dry_eyes: {
+            question: "Do your eyes feel irritated or itchy?",
+            options: {
+                irritated: "Apply Rose Water + Castor Oil Drops + Aloe Vera Gel for soothing.",
+                itchy: "Use Rose Water + Castor Oil Drops for itch relief."
+            }
+        },
+        strain: {
+            question: "Do you experience headaches along with eye strain?",
+            options: {
+                yes: "Use Triphala Eye Wash + Brahmi Oil Massage for relief.",
+                no: "Apply Triphala Eye Wash for reducing eye strain."
+            }
+        }
+    }
+}
+        };
+
+        // Store selected answers
+        let selectedAnswers = {};
+
+        // Display next question or result
+        // Updated nextQuestion to handle nested questions correctly
+function nextQuestion(symptom, nextObj = null) {
+    if (nextObj) {
+        selectedAnswers[symptom] = nextObj;
+    } else {
+        selectedAnswers.symptom = symptom;
+        nextObj = questions[symptom];
+    }
+
+    if (!nextObj || typeof nextObj === "string") {
+        showPrescription(nextObj || "Take prescribed herbs.");
+    } else {
+        document.getElementById('question-container').innerText = nextObj.question;
+        document.getElementById('options-container').innerHTML = getOptionsHTML(nextObj.options, symptom);
+    }
+}
+
+// Generate Options - Updated for Nested Objects
+function getOptionsHTML(options, parentSymptom) {
+    let html = "";
+    for (let key in options) {
+        if (typeof options[key] === "string") {
+            html += `<button class="bg-green-500 text-white py-2 px-4 rounded w-full text-left" 
+                        onclick="showPrescription('${options[key]}')">${capitalize(key)}</button>`;
+        } else {
+            html += `<button class="bg-green-500 text-white py-2 px-4 rounded w-full text-left" 
+                        onclick="nextQuestion('${key}', questions['${parentSymptom}'].options['${key}'])">${capitalize(key)}</button>`;
+        }
+    }
+    return html;
+}
+
+
+        // Show Prescription with Dosage
+        function showPrescription(prescription) {
+            document.getElementById('quiz-container').classList.add('hidden');
+            document.getElementById('result-container').classList.remove('hidden');
+
+            const dosage = getDosage(selectedAnswers.symptom, prescription);
+            document.getElementById('prescription').innerHTML = `<strong>${prescription}</strong><br><br><strong>Dosage:</strong> ${dosage}`;
+            
+        }
+
+        // Get Dosage
+        function getDosage(symptom, prescription) {
+            return dosageInfo[symptom] || "Dosage not specified. Follow general guidelines.";
+        }
+
+        // Generate PDF
+        async function generatePDF() {
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+
+    // Set a nice border around the PDF page
+    doc.setLineWidth(2); // Set line width for the border
+    doc.setDrawColor(0, 0, 0); // Set border color (black)
+    doc.rect(10, 10, doc.internal.pageSize.width - 20, doc.internal.pageSize.height - 20); // Draw the border (x, y, width, height)
+
+    // Set title style
+    doc.setFontSize(24);
+    doc.setFont('times', 'bold');
+    doc.setTextColor(34, 139, 34); // Green color for the title
+    doc.text("Herbal Prescription Report", 14, 20);
+
+    // Add a horizontal line under the title for separation
+    doc.setLineWidth(0.5);
+    doc.line(14, 25, 195, 25); // Horizontal line after title
+
+    // Symptom Section
+    doc.setFontSize(16);
+    doc.setFont('times', 'bold');
+    doc.setTextColor(0, 0, 0); // Black color for the title of sections
+    doc.text("Symptom", 14, 40);
+
+    // Symptom content
+    doc.setFontSize(14);
+    doc.setFont('helvetica', 'normal');
+    doc.setTextColor(0, 0, 0); // Black for text
+    doc.text(`Symptom: ${capitalize(selectedAnswers.symptom)}`, 14, 50);
+
+    // Prescription Section
+    doc.setFontSize(16);
+    doc.setFont('times', 'bold');
+    doc.setTextColor(0, 0, 0); // Black for section title
+    doc.text("Prescription", 14, 70);
+
+    // Prescription content
+    doc.setFontSize(14);
+    doc.setFont('helvetica', 'normal');
+    doc.setTextColor(0, 0, 0); // Black for prescription text
+    doc.text(`Prescription: ${document.getElementById('prescription').innerText}`, 14, 80);
+
+    // Add some space before the note
+    let yOffset = 110;
+
+    // Note Section
+    doc.setFontSize(16);
+    doc.setFont('times', 'bold');
+    doc.setTextColor(139, 0, 0); // Red color for the note section title
+    doc.text("Important Note", 14, yOffset);
+
+    // Note content
+    doc.setFontSize(12);
+    doc.setFont('helvetica', 'normal');
+    doc.setTextColor(139, 0, 0); // Red for the note text
+    yOffset += 10; // Adjust offset for note content
+    doc.text("Note: These are purely home remedies. If none of these work, consult a doctor. \n \n Source \n AYUSH \n ICMR(Indian Council of Medical Research) \n ICAR(Indian Council of Agriculture Research) \n CCHR(Central Council Of Homeopathy Research)", 14, yOffset);
+ 
+    // Footer with page number
+    const pageCount = doc.internal.getNumberOfPages();
+    doc.setFontSize(10);
+    doc.setFont('helvetica', 'italic');
+    doc.setTextColor(0, 0, 0);
+    doc.text(`Page 1 of ${pageCount}`, doc.internal.pageSize.width - 40, doc.internal.pageSize.height - 10, null, null, 'right');
+    
+    // Save the file
+    doc.save("Herbal_Prescription.pdf");
+}
+
+
+
+        // Capitalize
+        function capitalize(str) {
+            return str.charAt(0).toUpperCase() + str.slice(1);
+        }
+    </script>
+</body>
+
+</html>

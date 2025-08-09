@@ -1,0 +1,173 @@
+{
+    "asset": {
+        "version": "2.0",
+        "generator": "Open Asset Import Library (assimp v5.4.0)"
+    },
+    "extensionsUsed": [
+        "KHR_materials_volume",
+        "FB_ngon_encoding"
+    ],
+    "accessors": [
+        {
+            "bufferView": 0,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 171555,
+            "type": "VEC3",
+            "max": [
+                0.7309340238571167,
+                0.9995759725570679,
+                0.68886798620224
+            ],
+            "min": [
+                -0.7256709933280945,
+                -0.9985880255699158,
+                -0.6797450184822083
+            ]
+        },
+        {
+            "bufferView": 1,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 171555,
+            "type": "VEC3",
+            "max": [
+                0.9999805092811584,
+                0.999997615814209,
+                0.9999850988388062
+            ],
+            "min": [
+                -0.9999412298202515,
+                -1.0,
+                -0.9999880790710449
+            ]
+        },
+        {
+            "bufferView": 2,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 171555,
+            "type": "VEC2",
+            "max": [
+                1.0,
+                1.0
+            ],
+            "min": [
+                0.000014185905456542969,
+                0.00005799531936645508
+            ]
+        },
+        {
+            "bufferView": 3,
+            "byteOffset": 0,
+            "componentType": 5125,
+            "count": 912360,
+            "type": "SCALAR",
+            "max": [
+                171554
+            ],
+            "min": [
+                0
+            ]
+        }
+    ],
+    "buffers": [
+        {
+            "byteLength": 9139200,
+            "uri": "aloe_vera_low_size_mo_0326045542_texture_0.bin"
+        }
+    ],
+    "bufferViews": [
+        {
+            "buffer": 0,
+            "byteOffset": 0,
+            "byteLength": 2058660,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 2058660,
+            "byteLength": 2058660,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 4117320,
+            "byteLength": 1372440,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 5489760,
+            "byteLength": 3649440,
+            "target": 34963
+        }
+    ],
+    "images": [
+        {
+            "uri": "textures/image_0.png"
+        }
+    ],
+    "materials": [
+        {
+            "name": "Mat_1",
+            "pbrMetallicRoughness": {
+                "baseColorTexture": {
+                    "index": 0
+                },
+                "metallicFactor": 0.0,
+                "roughnessFactor": 0.800000011920929
+            },
+            "doubleSided": true
+        }
+    ],
+    "meshes": [
+        {
+            "name": "meshes[0]",
+            "primitives": [
+                {
+                    "mode": 4,
+                    "material": 0,
+                    "indices": 3,
+                    "attributes": {
+                        "POSITION": 0,
+                        "NORMAL": 1,
+                        "TEXCOORD_0": 2
+                    }
+                }
+            ]
+        }
+    ],
+    "nodes": [
+        {
+            "name": "aloe_vera_low_size_mo_0326045542_texture",
+            "children": [
+                1
+            ]
+        },
+        {
+            "name": "mesh_0",
+            "mesh": 0
+        }
+    ],
+    "samplers": [
+        {
+            "magFilter": 9729,
+            "minFilter": 9987
+        }
+    ],
+    "scenes": [
+        {
+            "nodes": [
+                0
+            ]
+        }
+    ],
+    "textures": [
+        {
+            "source": 0,
+            "sampler": 0
+        }
+    ],
+    "scene": 0
+}

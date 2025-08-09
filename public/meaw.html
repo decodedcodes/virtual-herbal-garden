@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prescription Generator</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      line-height: 1.5;
+      margin: 0;
+      padding: 0;
+      color: #333;
+      background-color: #f5f8f5;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    h1 {
+      color: #166534;
+      margin-bottom: 0.5rem;
+    }
+    .prescription-form {
+      background-color: white;
+      border-radius: 8px;
+      padding: 2rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+    .checkbox-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 0.5rem;
+    }
+    .checkbox-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .checkbox-item input {
+      width: auto;
+    }
+    button {
+      background-color: #166534;
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 4px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+    button:hover {
+      background-color: #14532d;
+    }
+    .back-link {
+      display: inline-block;
+      margin-top: 1rem;
+      color: #166534;
+      text-decoration: none;
+    }
+    .back-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Prescription Generator</h1>
+      <p>Create a personalized herbal prescription based on AYUSH principles</p>
+    </header>
+
+    <div class="prescription-form">
+      <form id="prescriptionForm">
+        <div class="form-group">
+          <label for="patientName">Patient Name</label>
+          <input type="text" id="patientName" name="patientName" required>
+        </div>
+
+        <div class="form-group">
+          <label for="patientAge">Age</label>
+          <input type="number" id="patientAge" name="patientAge" min="1" max="120" required>
+        </div>
+
+        <div class="form-group">
+          <label for="gender">Gender</label>
+          <select id="gender" name="gender" required>
+            <option value="">Select gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+<!-- 
+        <div class="form-group">
+          <label for="ayushSystem">AYUSH System</label>
+          <select id="ayushSystem" name="ayushSystem" required>
+            <option value="">Select system</option>
+            <option value="ayurveda">Ayurveda</option>
+            <option value="yoga">Yoga & Naturopathy</option>
+            <option value="unani">Unani</option>
+            <option value="siddha">Siddha</option>
+            <option value="homeopathy">Homeopathy</option>
+          </select>
+        </div> -->
+
+        <!-- <div class="form-group">
+          <label>Health Concerns</label>
+          <div class="checkbox-group">
+            <div class="checkbox-item">
+              <input type="checkbox" id="digestive" name="concerns" value="digestive">
+              <label for="digestive">Digestive Issues</label>
+            </div>
+            <div class="checkbox-item">
+              <input type="checkbox" id="respiratory" name="concerns" value="respiratory">
+              <label for="respiratory">Respiratory Problems</label>
+            </div>
+            <div class="checkbox-item">
+              <input type="checkbox" id="skin" name="concerns" value="skin">
+              <label for="skin">Skin Conditions</label>
+            </div>
+            <div class="checkbox-item">
+              <input type="checkbox" id="stress" name="concerns" value="stress">
+              <label for="stress">Stress & Anxiety</label>
+            </div>
+            <div class="checkbox-item">
+              <input type="checkbox" id="joint" name="concerns" value="joint">
+              <label for="joint">Joint Pain</label>
+            </div>
+            <div class="checkbox-item">
+              <input type="checkbox" id="immunity" name="concerns" value="immunity">
+              <label for="immunity">Immunity</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="notes">Additional Notes</label>
+          <textarea id="notes" name="notes" rows="4"></textarea>
+        </div> -->
+
+        <a href = "x.html" type = "button">proceed to quiz</a>
+      </form>
+
+      <a href="/" class="back-link">← Back to Virtual Herbal Garden</a>
+    </div>
+  </div>
+
+  <!-- <script>
+    document.getElementById('prescriptionForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Prescription generated! In a real application, this would create a PDF with recommended herbs based on your selections.');
+    });
+  </script> -->
+</body>
+</html>
+

@@ -1,0 +1,173 @@
+{
+    "asset": {
+        "version": "2.0",
+        "generator": "Open Asset Import Library (assimp v5.4.0)"
+    },
+    "extensionsUsed": [
+        "KHR_materials_volume",
+        "FB_ngon_encoding"
+    ],
+    "accessors": [
+        {
+            "bufferView": 0,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 170282,
+            "type": "VEC3",
+            "max": [
+                0.843146026134491,
+                0.9346669912338257,
+                0.9981650114059448
+            ],
+            "min": [
+                -0.8286319971084595,
+                -0.9431880116462708,
+                -0.9969589710235596
+            ]
+        },
+        {
+            "bufferView": 1,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 170282,
+            "type": "VEC3",
+            "max": [
+                0.9999567866325378,
+                0.9999854564666748,
+                0.9999803900718689
+            ],
+            "min": [
+                -0.999992311000824,
+                -0.9999805092811584,
+                -0.9999922513961792
+            ]
+        },
+        {
+            "bufferView": 2,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 170282,
+            "type": "VEC2",
+            "max": [
+                0.99951171875,
+                1.0
+            ],
+            "min": [
+                0.000050187110900878906,
+                0.0000010132789611816406
+            ]
+        },
+        {
+            "bufferView": 3,
+            "byteOffset": 0,
+            "componentType": 5125,
+            "count": 905880,
+            "type": "SCALAR",
+            "max": [
+                170281
+            ],
+            "min": [
+                0
+            ]
+        }
+    ],
+    "buffers": [
+        {
+            "byteLength": 9072544,
+            "uri": "Phyllanthus_emblica_l_0326063223_texture_0.bin"
+        }
+    ],
+    "bufferViews": [
+        {
+            "buffer": 0,
+            "byteOffset": 0,
+            "byteLength": 2043384,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 2043384,
+            "byteLength": 2043384,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 4086768,
+            "byteLength": 1362256,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 5449024,
+            "byteLength": 3623520,
+            "target": 34963
+        }
+    ],
+    "images": [
+        {
+            "uri": "textures/image_0.png"
+        }
+    ],
+    "materials": [
+        {
+            "name": "Mat_1",
+            "pbrMetallicRoughness": {
+                "baseColorTexture": {
+                    "index": 0
+                },
+                "metallicFactor": 0.0,
+                "roughnessFactor": 0.800000011920929
+            },
+            "doubleSided": true
+        }
+    ],
+    "meshes": [
+        {
+            "name": "meshes[0]",
+            "primitives": [
+                {
+                    "mode": 4,
+                    "material": 0,
+                    "indices": 3,
+                    "attributes": {
+                        "POSITION": 0,
+                        "NORMAL": 1,
+                        "TEXCOORD_0": 2
+                    }
+                }
+            ]
+        }
+    ],
+    "nodes": [
+        {
+            "name": "Phyllanthus_emblica_l_0326063223_texture",
+            "children": [
+                1
+            ]
+        },
+        {
+            "name": "mesh_0",
+            "mesh": 0
+        }
+    ],
+    "samplers": [
+        {
+            "magFilter": 9729,
+            "minFilter": 9987
+        }
+    ],
+    "scenes": [
+        {
+            "nodes": [
+                0
+            ]
+        }
+    ],
+    "textures": [
+        {
+            "source": 0,
+            "sampler": 0
+        }
+    ],
+    "scene": 0
+}

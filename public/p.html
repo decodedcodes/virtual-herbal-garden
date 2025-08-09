@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Herb Delivery Service</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background-color: #f4f9f4;
+      padding: 20px;
+    }
+
+    header {
+      background: linear-gradient(135deg, #4caf50, #45a049);
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .button-container button {
+      background-color: #4caf50;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-left: 10px;
+    }
+
+    .herb-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .herb-card {
+      background-color: #fff;
+      padding: 15px;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      transition: transform 0.3s;
+    }
+
+    .herb-card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .herb-card h2 {
+      font-size: 18px;
+      margin: 10px 0;
+    }
+
+    .herb-card p {
+      font-size: 14px;
+      color: #777;
+    }
+
+    .price {
+      font-size: 16px;
+      font-weight: bold;
+      color: #4caf50;
+      margin: 10px 0;
+    }
+
+    .herb-card button {
+      background-color: #4caf50;
+      color: white;
+      padding: 10px 12px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin: 5px;
+    }
+
+    .herb-card button:hover {
+      background-color: #45a049;
+    }
+
+    /* Modal styles */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 10%;
+      left: 50%;
+      transform: translate(-50%, 0);
+      background: white;
+      padding: 20px;
+      width: 400px;
+      border-radius: 8px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+    }
+
+    .modal-content h2 {
+      margin-top: 0;
+      color: #4caf50;
+    }
+
+    .modal-content button {
+      margin-top: 10px;
+      padding: 8px 12px;
+      background-color: #ff4d4d;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .modal-content button:hover {
+      background-color: #ff3333;
+    }
+
+    /* Show/Hide Modal */
+    .hidden {
+      display: none;
+    }
+
+    .show {
+      display: block;
+    }
+
+    /* Scrollable Form */
+    .scrollable-form {
+      max-height: 500px;
+      overflow-y: auto;
+      padding-right: 10px;
+    }
+
+    .scrollable-form::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .scrollable-form::-webkit-scrollbar-thumb {
+      background-color: #4caf50;
+      border-radius: 4px;
+    }
+
+    /* Form styles */
+    .form-container {
+      width: 100%;
+      max-width: 600px;
+      margin: 20px auto;
+      background-color: #f9f9f9;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 12px;
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    textarea {
+      resize: none;
+    }
+
+    button {
+      background-color: #4caf50;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    /* Updated CSS for Scrollable Order History */
+#history-items {
+  max-height: 400px; /* Set max height to 400px */
+  overflow-y: auto; /* Enable vertical scrolling */
+  padding-right: 10px;
+}
+
+#history-items::-webkit-scrollbar {
+  width: 6px;
+}
+
+#history-items::-webkit-scrollbar-thumb {
+  background-color: #4caf50;
+  border-radius: 4px;
+}
+
+
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header Section -->
+  <header>
+    <div style="display: flex; align-items: center; gap: 10px;">
+      <span>🌿 For Cultivator's Choice 🌿</span>
+      <button onclick="redirectToAbout()">Buy Seeds </button>
+    </div>
+    <div class="button-container">
+      <button onclick="toggleCart()">🛒 Cart (<span id="cart-count">0</span>)</button>
+      <button onclick="toggleWishlist()">💚 Wishlist (<span id="wishlist-count">0</span>)</button>
+      <button onclick="toggleHistory()">📦 Order History</button>
+    </div>
+  </header>
+
+  <!-- Herb List Section -->
+  <div class="herb-list" id="herb-list"></div>
+
+  <!-- Cart Modal -->
+  <div id="cart-modal" class="modal hidden">
+    <div class="modal-content">
+      <h2>🛒 Your Cart</h2>
+      <div id="cart-items"></div>
+      <h3>Total: ₹ <span id="cart-total">0.00</span></h3>
+      <button onclick="showOrderForm()">Place Order</button>
+      <button onclick="toggleCart()">Close</button>
+    </div>
+  </div>
+
+  <!-- Wishlist Modal -->
+ <!-- Wishlist Modal -->
+<div id="wishlist-modal" class="modal hidden">
+    <div class="modal-content">
+      <h2>💚 Your Wishlist</h2>
+      <div id="wishlist-items"></div>
+      <button onclick="toggleWishlist()">Close</button>
+    </div>
+  </div>
+  
+
+  <!-- Order History Modal -->
+  <!-- Order History Modal (Updated) -->
+<div id="history-modal" class="modal hidden">
+    <div class="modal-content">
+      <h2>📦 Order History</h2>
+      <div id="history-items"></div>
+      <button onclick="clearOrderHistory()">Clear History</button>
+      <button onclick="toggleHistory()">Close</button>
+    </div>
+  </div>
+  
+
+  <!-- Order Form Modal -->
+  <div id="order-form-section" class="modal hidden">
+    <div class="form-container scrollable-form">
+      <h3>👤 Customer Details:</h3>
+
+      <div class="form-group">
+        <label for="first-name">First Name:</label>
+        <input id="first-name" type="text" placeholder="Enter First Name" required />
+      </div>
+
+      <div class="form-group">
+        <label for="last-name">Last Name:</label>
+        <input id="last-name" type="text" placeholder="Enter Last Name" required />
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input id="email" type="email" placeholder="Enter Email" required />
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone Number:</label>
+        <input id="phone" type="tel" placeholder="Enter Phone Number" required />
+      </div>
+
+      <!-- Address Section -->
+      <h3>🏠 Address Details:</h3>
+
+      <div class="form-group">
+        <label for="street">Street Address:</label>
+        <input id="street" type="text" placeholder="Enter Street Address" required />
+      </div>
+
+      <div class="form-group">
+        <label for="city">City:</label>
+        <input id="city" type="text" placeholder="Enter City" required />
+      </div>
+
+      <div class="form-group">
+        <label for="state">State:</label>
+        <input id="state" type="text" placeholder="Enter State" required />
+      </div>
+
+      <div class="form-group">
+        <label for="zip">Zip Code:</label>
+        <input id="zip" type="text" placeholder="Enter Zip Code" required />
+      </div>
+
+      <!-- Delivery Time -->
+      <h3>🚚 Delivery Time:</h3>
+      <label>
+        <input type="radio" name="delivery-time" value="ASAP" required /> ASAP
+      </label>
+      <label>
+        <input type="radio" name="delivery-time" value="Take Your Time" required /> Take Your Time
+      </label>
+
+      <!-- Payment Method -->
+      <h3>💳 Payment Method:</h3>
+      <select id="payment-method" required>
+        <option value="" disabled selected>Select Payment Method</option>
+        <option value="Credit Card">Credit Card</option>
+        <option value="Debit Card">Debit Card</option>
+        <option value="UPI">UPI</option>
+        <option value="Cash on Delivery">Cash on Delivery</option>
+      </select>
+
+      <button onclick="confirmOrder()">Confirm Order</button>
+      <button onclick="hideOrderForm()">Cancel</button>
+    </div>
+  </div>
+
+  <script>
+    const herbs = [
+    {
+        name: "Tulsi",
+        price: 150,
+        description: "Aromatic herb with various health benefits.",
+        image: "https://media.gettyimages.com/id/1610507261/photo/ocimum-tenuiflorum-commonly-known-as-holy-basil-tulsi-or-tulasi-and-tamole-damole-or-domole.jpg?s=612x612&w=0&k=20&c=FA5t03IMzJBaaWc2TeDKfnWCEHuHJFmdeIL83vjXBPI=",
+      },
+      {
+        name: "Peppermint",
+        price: 250,
+        description: "Refreshing herb perfect for digestion.",
+        image: "https://media.gettyimages.com/id/1262673905/photo/green-peppermint-at-farmers-market.jpg?s=612x612&w=0&k=20&c=By1aVlvvHUZ6EdNgZESDvOsVWEbiBZ_OGaAuX24AwLI=",
+      },
+      {
+    name: "Rosemary",
+    price: 160,
+    description: "Enhances memory and reduces stress.",
+    image:
+      "https://media.gettyimages.com/id/1307341394/photo/rosemary.jpg?s=612x612&w=0&k=20&c=QiQK54dqsqTKBei7JMgBK6pyI6CW8w3nAkbXONukvbE=",
+  },
+  {
+    name: "Lavender",
+    price: 189,
+    description: "Helps with relaxation and stress relief.",
+    image:
+      "https://media.gettyimages.com/id/133607032/photo/basket-of-lavender.jpg?s=612x612&w=0&k=20&c=S9C7oBWVLOXNc_DbCrLD0Wd30j1U5u1z0BCZAB5IIrI=",
+  },
+  {
+    name: "Chamomile",
+    price: 140,
+    description: "Known for its calming and sleep-inducing properties.",
+    image:
+      "https://media.gettyimages.com/id/1372789631/photo/daisy-flowers-in-forest-close-up.jpg?s=612x612&w=0&k=20&c=UVvbBYOVdkGnYqlbl10NU4zepz6WNQSc40GiIOuzfsM=",
+  },
+  {
+    name: "Sage",
+    price: 170,
+    description: "Supports immune function and digestive health.",
+    image:
+      "https://media.gettyimages.com/id/1226977757/photo/close-up-of-sage-leaves.jpg?s=612x612&w=0&k=20&c=b6a7jeweARpO3fYxnBLpjiLYlqYno2WJGFwVeDxw7LM=",
+  },
+  {
+    name: "Thyme",
+    price: 125,
+    description: "Great for respiratory health and flavoring dishes.",
+    image:
+      "https://media.gettyimages.com/id/183874840/photo/citrus-thyme.jpg?s=612x612&w=0&k=20&c=NURkxxsWlt2bd8O8Euohxj4aKulVZXv_tKDE4t1JAsc=",
+  },
+  {
+    name: "Oregano",
+    price: 145,
+    description: "Known for its anti-inflammatory properties.",
+    image:
+      "https://media.gettyimages.com/id/907728974/photo/various-fresh-herbs.jpg?s=612x612&w=0&k=20&c=P6fiXXxsx11ZgQY6WSvFIAjive71NnERpS9cz4O75hg=",
+  },
+  {
+    name: "Parsley",
+    price: 200,
+    description: "Rich in antioxidants and supports digestion.",
+    image:
+      "https://media.gettyimages.com/id/1212540300/photo/herb-pots.jpg?s=612x612&w=0&k=20&c=htYQ-imH6Hrl8UtiJq3nkp46wDkipaog1OzRr254s_M=",
+  },
+  {
+    name: "Cilantro",
+    price: 90,
+    description: "Helps detoxify the body and adds flavor to food.",
+    image:
+      "https://media.gettyimages.com/id/1322499080/photo/coriander-cilantro.jpg?s=612x612&w=0&k=20&c=W3SSgEefGQ9SvV2ZhYyov5oA81e9Y0dG5lU2od7rP4g=",
+  },
+  {
+    name: "Lemongrass",
+    price: 230,
+    description: "Has calming and antimicrobial properties.",
+    image:
+      "https://media.gettyimages.com/id/959747512/photo/the-citronella-scientifically-known-as-cymbopogon-nardus-or-cymbopogon-winterianus-is-a.jpg?s=612x612&w=0&k=20&c=djoINCxYeZA69jzxRi7awMFcy0cedhuZzNduxitI6ng=",
+  },
+  {
+    name: "Chives",
+    price: 100,
+    description: "A mild onion-like flavor, great for cooking.",
+    image:
+      "https://media.gettyimages.com/id/503881089/photo/germany-baden-wuerttemberg-chive-allium-schoenoprasum-in-garden.jpg?s=612x612&w=0&k=20&c=X6nqQF3WvkvODsWCTVgMmNtFEmCzxaADdy2zeJvZVAk=",
+  },
+  {
+    name: "Neem",
+    price: 200,
+    description: "Antibacterial, antiviral, and antifungal properties.",
+    image:
+      "https://media.gettyimages.com/id/1343698763/photo/neem-tree-azadirachta-indica-indian-lilac-growing-in-a-flower-pot-home-balcony-garden.jpg?s=612x612&w=0&k=20&c=aQbUzj9F3X0m7KlHOUtU1mwdU-ln1KOIFaBMx_xJrLk=",
+  },
+  {
+    name: "Ginger",
+    price: 130,
+    description: "Digestive benefits and anti-inflammatory properties.",
+    image:
+      "https://media.gettyimages.com/id/1295295673/photo/freshly-harvested-ginger-on-a-basket-indoors.jpg?s=612x612&w=0&k=20&c=Ver_6CGkYeyCBpLUZxPGUU6LKrT9NwUYuejUCGuK9po=",
+  },
+  {
+    name: "Aloe Vera",
+    price: 150,
+    description: "Soothing and healing for skin and digestion.",
+    image:
+      "https://media.gettyimages.com/id/1473547826/photo/aloe-arborescens-the-krantz-aloe-or-candelabra-aloe.jpg?s=612x612&w=0&k=20&c=SjLQidBNcoPx31kLdaXnG5izj1INF7tizOT4u1ukzUs=",
+  },
+  {
+    name: "Ashwagandha",
+    price: 275,
+    description: "Stress-relieving and adaptogenic properties.",
+    image:
+      "https://media.gettyimages.com/id/1337880842/photo/ashwagandha.jpg?s=612x612&w=0&k=20&c=tvHSsncHSQtM6rHMyXQaek2164F7AYEtxmej7kU4LMA=",
+  },
+  {
+    name: "Turmeric",
+    price: 120,
+    description: "Anti-inflammatory and antioxidant properties.",
+    image:
+      "https://media.gettyimages.com/id/1218556457/photo/turmeric-root-for-sale-in-a-market-pondicherry-india.jpg?s=612x612&w=0&k=20&c=b6gjzEzZIh-RNSJPsvFWxmJx-v-FfyyuXvLKKelBIXY=",
+  },
+  {
+    name: "Brahmi",
+    price: 180,
+    description: "Improves brain function and reduces anxiety.",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSx0kAyBARQoA2nBO48Nqbyp1YWk3mWZcUAWA&s",
+  },
+  {
+    name: "Amla",
+    price: 160,
+    description: "Rich in Vitamin C and antioxidants.",
+    image:
+      "https://media.gettyimages.com/id/1441909376/photo/indian-gooseberry-greenish-yellow-fruits-ready-to-consume-phyllanthus-emblica-phyllanthaceae.jpg?s=612x612&w=0&k=20&c=C58o77exWa8VofymXsa0wFdDenYkue2bGo14GYIEsGc=",
+  },
+  {
+    name: "Shankhpushpi",
+    price: 190,
+    description: "Enhances memory and cognitive function.",
+    image:
+      "https://m.media-amazon.com/images/I/512KeihmjML._AC_UF1000,1000_QL80_.jpg",
+  },
+  {
+    name: "Shatavari",
+    price: 225,
+    description: "Balances hormones and improves immunity.",
+    image:
+      "https://media.gettyimages.com/id/2191502330/photo/asparagus-racemosus-or-shatavari-plant-closeup.jpg?s=612x612&w=0&k=20&c=wyUPtBcEWIEs7-012_1bSkOKD1iS4yN9JNXbaimMaU4=",
+  },
+  {
+    name: "Giloy",
+    price: 140,
+    description: "Boosts immunity and detoxifies the body.",
+    image:
+      "https://media.gettyimages.com/id/1343130844/photo/tinospora-cordifolia-tinospora-crispa-miers-menispermaceae-species-of-climber-green-leaves-in.jpg?s=612x612&w=0&k=20&c=5vn0IOD9mnStY4__VYiPYNLas9goMLMV7WuUwoLzVY0=",
+  },
+  {
+    name: "Gotu Kola",
+    price: 195,
+    description: "Boosts cognitive function and circulation.",
+    image:
+      "https://media.gettyimages.com/id/2154028756/photo/full-frame-shot-of-leaves.jpg?s=612x612&w=0&k=20&c=GekKfmzKeFgiO6O1JenC0y_grIXswux6HR-cSYqFtC0=",
+  },
+  {
+    name: "Guggul",
+    price: 320,
+    description: "Regulates cholesterol and supports metabolism.",
+    image:
+      "https://lalitenterprise.com/cdn/shop/files/Untitleddesign-2024-06-06T182838.115.webp?v=1717678835",
+  },
+  {
+    name: "Haritaki",
+    price: 170,
+    description: "Aids digestion and detoxifies the body.",
+    image:
+      "https://haritaki.org/wp-content/uploads/2016/07/haritaki-fruit.jpg",
+  },
+  {
+    name: "Punarnava",
+    price: 160,
+    description: "Supports kidney health and fluid balance.",
+    image:
+      "https://m.media-amazon.com/images/I/41Z5bGdbW3L._SX450_.jpg",
+  },
+  {
+    name: "Arjuna",
+    price: 210,
+    description: "Strengthens the heart and improves circulation.",
+    image:
+      "https://dukaan.b-cdn.net/2000x2000/webp/upload_file_service/7ca3783d-76ac-46ba-9998-31a03df3cd86/terminalia-arjuna-plant-onlineplantscart-in.png",
+  },
+  {
+    name: "Aswatha",
+    price: 140,
+    description: "Supports digestion and skin health.",
+    image:
+      "https://images.meesho.com/images/products/468929600/iwkzw_512.webp",
+  },
+  {
+    name: "Jatamansi",
+    price: 350,
+    description: "Calms the mind and promotes relaxation.",
+    image:
+      "https://www.planetayurveda.com/wp-content/uploads/2024/04/Jatamansi.jpg",
+  },
+  {
+    name: "Katuki",
+    price: 290,
+    description: "Supports liver function and detox.",
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Picrorhiza_kurroa_kz01.jpg/220px-Picrorhiza_kurroa_kz01.jpg",
+  },
+  {
+    name: "Rasna",
+    price: 180,
+    description: "Reduces joint pain and inflammation.",
+    image:
+      "https://imgs.search.brave.com/4OWLgiur4MVCt2s1zgqcVH1hU3m_mhMkulgaC3x0HR4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/bmV0bWVkcy5jb20v/aW1hZ2VzL2Ntcy9t/YWdlZmFuX2Jsb2cv/cG9wdWxhci8xNjUw/OTU5Nzk0X2luZGlj/YS1mbG93ZXJfMjAw/eDIwMC5qcGc",
+  },
+  {
+    name: "Vidari",
+    price: 220,
+    description: "Improves stamina and boosts energy.",
+    image:
+      "https://www.iafaforallergy.com/wp-content/uploads/2023/11/pueraria-tuberosa-300x220-1.webp",
+  },
+    ];
+
+    function redirectToAbout() {
+      window.location.href = "s.html"; // Redirect to another page
+    }
+
+    let cart = {};
+    let wishlist = [];
+    let orderHistory = JSON.parse(localStorage.getItem("orderHistory")) || [];
+
+    document.addEventListener("DOMContentLoaded", () => {
+      displayHerbs();
+      updateCartCount();
+      updateWishlistCount();
+      displayHistory(); // Show previous orders on load
+    });
+
+    function displayHerbs() {
+      const herbList = document.getElementById("herb-list");
+      herbList.innerHTML = herbs
+        .map(
+          (herb) => `
+        <div class="herb-card">
+          <img src="${herb.image}" alt="${herb.name}" />
+          <h2>${herb.name}</h2>
+          <p>${herb.description}</p>
+          <div class="price">₹ ${herb.price}</div>
+          <button onclick="addToCart('${herb.name}')">Add to Cart</button>
+          <button onclick="addOrRemoveFromWishlist('${herb.name}')">
+            ${isInWishlist(herb.name) ? "💔 Remove from Wishlist" : "💚 Add to Wishlist"}
+          </button>
+        </div>`
+        )
+        .join("");
+    }
+
+    function addToCart(name) {
+      if (cart[name]) {
+        cart[name].quantity += 1;
+      } else {
+        const herb = herbs.find((h) => h.name === name);
+        cart[name] = { ...herb, quantity: 1 };
+      }
+      updateCartCount();
+    }
+
+    function changeQuantity(name, amount) {
+      if (cart[name]) {
+        cart[name].quantity += amount;
+        if (cart[name].quantity <= 0) {
+          delete cart[name];
+        }
+      }
+      updateCartCount();
+      displayCart();
+    }
+
+    function updateCartCount() {
+      const count = Object.values(cart).reduce((sum, item) => sum + item.quantity, 0);
+      document.getElementById("cart-count").innerText = count;
+    }
+
+    function toggleCart() {
+      document.getElementById("cart-modal").classList.toggle("show");
+      displayCart();
+    }
+
+    function displayCart() {
+      const cartItems = document.getElementById("cart-items");
+      if (Object.keys(cart).length === 0) {
+        cartItems.innerHTML = "<p>Your cart is empty!</p>";
+        document.getElementById("cart-total").innerText = "0.00";
+      } else {
+        cartItems.innerHTML = Object.values(cart)
+          .map(
+            (item) => `
+            <div>
+              ${item.name} (x${item.quantity}) - ₹ ${item.price * item.quantity}
+              <button onclick="changeQuantity('${item.name}', 1)">➕</button>
+              <button onclick="changeQuantity('${item.name}', -1)">➖</button>
+            </div>`
+          )
+          .join("");
+      }
+      updateCartTotal();
+    }
+
+    function updateCartTotal() {
+      const total = Object.values(cart).reduce((sum, item) => sum + item.price * item.quantity, 0);
+      document.getElementById("cart-total").innerText = total.toFixed(2);
+    }
+
+    function showOrderForm() {
+      document.getElementById("order-form-section").classList.add("show");
+      toggleCart();
+    }
+
+    function hideOrderForm() {
+      document.getElementById("order-form-section").classList.remove("show");
+    }
+
+    function confirmOrder() {
+      const firstName = document.getElementById("first-name").value.trim();
+      const lastName = document.getElementById("last-name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const street = document.getElementById("street").value.trim();
+      const city = document.getElementById("city").value.trim();
+      const state = document.getElementById("state").value.trim();
+      const zip = document.getElementById("zip").value.trim();
+      const paymentMethod = document.getElementById("payment-method").value;
+      const deliveryTime = document.querySelector('input[name="delivery-time"]:checked');
+
+      if (Object.keys(cart).length === 0) {
+        alert("❗ Your cart is empty. Please add items before placing an order.");
+        return;
+      }
+
+      if (!firstName || !lastName || !email || !phone || !street || !city || !state || !zip || !paymentMethod || !deliveryTime) {
+        alert("❗ Please fill in all required fields before placing the order.");
+        return;
+      }
+
+      const total = Object.values(cart).reduce((sum, item) => sum + item.price * item.quantity, 0);
+      const orderDetails = {
+        id: Date.now(),
+        name: `${firstName} ${lastName}`,
+        email,
+        phone,
+        address: `${street}, ${city}, ${state} - ${zip}`,
+        deliveryTime: deliveryTime.value,
+        paymentMethod,
+        items: Object.values(cart),
+        total: total.toFixed(2),
+        date: new Date().toLocaleString(),
+      };
+
+      orderHistory.unshift(orderDetails);
+      localStorage.setItem("orderHistory", JSON.stringify(orderHistory));
+
+      cart = {};
+      updateCartCount();
+      hideOrderForm();
+      alert(`🎉 Order placed successfully!\nTotal: ₹ ${total.toFixed(2)}\nThank you, ${firstName}!`);
+    }
+
+    // function toggleWishlist() {
+    //   document.getElementById("wishlist-modal").classList.toggle("show");
+    // }
+
+    // function isInWishlist(name) {
+    //   return wishlist.includes(name);
+    // }
+
+    // function addOrRemoveFromWishlist(name) {
+    //   if (isInWishlist(name)) {
+    //     wishlist = wishlist.filter((item) => item !== name);
+    //   } else {
+    //     wishlist.push(name);
+    //   }
+    //   updateWishlistCount();
+    // }
+
+    // function updateWishlistCount() {
+    //   document.getElementById("wishlist-count").innerText = wishlist.length;
+    // }
+
+    function toggleWishlist() {
+  document.getElementById("wishlist-modal").classList.toggle("show");
+  displayWishlist(); // ✅ Display wishlist when modal opens
+}
+
+function isInWishlist(name) {
+  return wishlist.includes(name);
+}
+
+function addOrRemoveFromWishlist(name) {
+  if (isInWishlist(name)) {
+    wishlist = wishlist.filter((item) => item !== name);
+  } else {
+    wishlist.push(name);
+  }
+  updateWishlistCount();
+  displayWishlist(); // ✅ Update wishlist when adding/removing items
+}
+
+function updateWishlistCount() {
+  document.getElementById("wishlist-count").innerText = wishlist.length;
+}
+
+// ✅ New function to display the wishlist dynamically
+function displayWishlist() {
+  const wishlistItems = document.getElementById("wishlist-items");
+
+  if (wishlist.length === 0) {
+    wishlistItems.innerHTML = "<p>Your wishlist is empty!</p>";
+  } else {
+    wishlistItems.innerHTML = wishlist
+      .map(
+        (name) => {
+          const herb = herbs.find((h) => h.name === name);
+          return `
+            <div style="margin-bottom: 10px;">
+              <strong>${herb.name}</strong> - ₹ ${herb.price}
+              <button onclick="removeFromWishlist('${herb.name}')">❌ Remove</button>
+            </div>
+          `;
+        }
+      )
+      .join("");
+  }
+}
+
+// ✅ New function to remove items from wishlist
+function removeFromWishlist(name) {
+  wishlist = wishlist.filter((item) => item !== name);
+  updateWishlistCount();
+  displayWishlist();
+}
+
+
+    function toggleHistory() {
+      document.getElementById("history-modal").classList.toggle("show");
+      displayHistory();
+    }
+
+    function clearOrderHistory() {
+      if (confirm("Are you sure you want to clear your order history?")) {
+        orderHistory = [];
+        localStorage.removeItem("orderHistory");
+        displayHistory();
+      }
+    }
+
+    function displayHistory() {
+      const historyItems = document.getElementById("history-items");
+      if (orderHistory.length === 0) {
+        historyItems.innerHTML = "<p>No previous orders available.</p>";
+        return;
+      }
+
+      historyItems.innerHTML = orderHistory
+        .map(
+          (order) => `
+          <div style="border: 1px solid #ccc; padding: 10px; margin: 5px; border-radius: 6px;">
+            <h4>Order ID: ${order.id}</h4>
+            <p><strong>Name:</strong> ${order.name}</p>
+            <p><strong>Email:</strong> ${order.email}</p>
+            <p><strong>Phone:</strong> ${order.phone}</p>
+            <p><strong>Address:</strong> ${order.address}</p>
+            <p><strong>Total:</strong> ₹${order.total}</p>
+            <p><strong>Delivery Time:</strong> ${order.deliveryTime}</p>
+            <p><strong>Payment Method:</strong> ${order.paymentMethod}</p>
+            <p><strong>Date:</strong> ${order.date}</p>
+            <hr>
+            <h5>Items:</h5>
+            <ul>
+              ${order.items
+                .map((item) => `<li>${item.name} (x${item.quantity}) - ₹${item.price * item.quantity}</li>`)
+                .join("")}
+            </ul>
+          </div>`
+        )
+        .join("");
+    }
+  </script>
+</body>
+
+</html

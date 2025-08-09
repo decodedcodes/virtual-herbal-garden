@@ -1,0 +1,173 @@
+{
+    "asset": {
+        "version": "2.0",
+        "generator": "Open Asset Import Library (assimp v5.4.0)"
+    },
+    "extensionsUsed": [
+        "KHR_materials_volume",
+        "FB_ngon_encoding"
+    ],
+    "accessors": [
+        {
+            "bufferView": 0,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 56084,
+            "type": "VEC3",
+            "max": [
+                0.9985100030899048,
+                0.21803000569343567,
+                0.29104000329971313
+            ],
+            "min": [
+                -0.9951720237731934,
+                -0.20969699323177338,
+                -0.3035709857940674
+            ]
+        },
+        {
+            "bufferView": 1,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 56084,
+            "type": "VEC3",
+            "max": [
+                0.9999897480010986,
+                0.9999748468399048,
+                0.9999995827674866
+            ],
+            "min": [
+                -0.9998771548271179,
+                -0.999999463558197,
+                -0.9999611377716064
+            ]
+        },
+        {
+            "bufferView": 2,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 56084,
+            "type": "VEC2",
+            "max": [
+                0.9951171875,
+                1.0
+            ],
+            "min": [
+                0.000027060508728027344,
+                0.000006020069122314453
+            ]
+        },
+        {
+            "bufferView": 3,
+            "byteOffset": 0,
+            "componentType": 5125,
+            "count": 285312,
+            "type": "SCALAR",
+            "max": [
+                56083
+            ],
+            "min": [
+                0
+            ]
+        }
+    ],
+    "buffers": [
+        {
+            "byteLength": 2935936,
+            "uri": "colorful_turmeric_3d__0323061519_texture_0.bin"
+        }
+    ],
+    "bufferViews": [
+        {
+            "buffer": 0,
+            "byteOffset": 0,
+            "byteLength": 673008,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 673008,
+            "byteLength": 673008,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 1346016,
+            "byteLength": 448672,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 1794688,
+            "byteLength": 1141248,
+            "target": 34963
+        }
+    ],
+    "images": [
+        {
+            "uri": "textures/image_0.png"
+        }
+    ],
+    "materials": [
+        {
+            "name": "Mat_1",
+            "pbrMetallicRoughness": {
+                "baseColorTexture": {
+                    "index": 0
+                },
+                "metallicFactor": 0.0,
+                "roughnessFactor": 0.800000011920929
+            },
+            "doubleSided": true
+        }
+    ],
+    "meshes": [
+        {
+            "name": "meshes[0]",
+            "primitives": [
+                {
+                    "mode": 4,
+                    "material": 0,
+                    "indices": 3,
+                    "attributes": {
+                        "POSITION": 0,
+                        "NORMAL": 1,
+                        "TEXCOORD_0": 2
+                    }
+                }
+            ]
+        }
+    ],
+    "nodes": [
+        {
+            "name": "colorful_turmeric_3d__0323061519_texture",
+            "children": [
+                1
+            ]
+        },
+        {
+            "name": "mesh_0",
+            "mesh": 0
+        }
+    ],
+    "samplers": [
+        {
+            "magFilter": 9729,
+            "minFilter": 9987
+        }
+    ],
+    "scenes": [
+        {
+            "nodes": [
+                0
+            ]
+        }
+    ],
+    "textures": [
+        {
+            "source": 0,
+            "sampler": 0
+        }
+    ],
+    "scene": 0
+}

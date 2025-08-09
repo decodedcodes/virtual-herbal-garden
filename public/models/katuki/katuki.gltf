@@ -1,0 +1,173 @@
+{
+    "asset": {
+        "version": "2.0",
+        "generator": "Open Asset Import Library (assimp v5.4.0)"
+    },
+    "extensionsUsed": [
+        "KHR_materials_volume",
+        "FB_ngon_encoding"
+    ],
+    "accessors": [
+        {
+            "bufferView": 0,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 149208,
+            "type": "VEC3",
+            "max": [
+                0.8452879786491394,
+                0.9920129776000977,
+                0.9411680102348328
+            ],
+            "min": [
+                -0.8520399928092957,
+                -0.9898750185966492,
+                -0.9357089996337891
+            ]
+        },
+        {
+            "bufferView": 1,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 149208,
+            "type": "VEC3",
+            "max": [
+                0.9999852180480957,
+                0.9999916553497314,
+                0.9999925494194031
+            ],
+            "min": [
+                -0.9999839067459106,
+                -0.9999727606773376,
+                -0.9999839663505554
+            ]
+        },
+        {
+            "bufferView": 2,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 149208,
+            "type": "VEC2",
+            "max": [
+                0.99951171875,
+                1.0
+            ],
+            "min": [
+                0.0000014901161193847656,
+                0.0000020265579223632813
+            ]
+        },
+        {
+            "bufferView": 3,
+            "byteOffset": 0,
+            "componentType": 5125,
+            "count": 771858,
+            "type": "SCALAR",
+            "max": [
+                149207
+            ],
+            "min": [
+                0
+            ]
+        }
+    ],
+    "buffers": [
+        {
+            "byteLength": 7862088,
+            "uri": "pircrorhiza_kurroa_lo_0326062353_texture_0.bin"
+        }
+    ],
+    "bufferViews": [
+        {
+            "buffer": 0,
+            "byteOffset": 0,
+            "byteLength": 1790496,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 1790496,
+            "byteLength": 1790496,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 3580992,
+            "byteLength": 1193664,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 4774656,
+            "byteLength": 3087432,
+            "target": 34963
+        }
+    ],
+    "images": [
+        {
+            "uri": "textures/image_0.png"
+        }
+    ],
+    "materials": [
+        {
+            "name": "Mat_1",
+            "pbrMetallicRoughness": {
+                "baseColorTexture": {
+                    "index": 0
+                },
+                "metallicFactor": 0.0,
+                "roughnessFactor": 0.800000011920929
+            },
+            "doubleSided": true
+        }
+    ],
+    "meshes": [
+        {
+            "name": "meshes[0]",
+            "primitives": [
+                {
+                    "mode": 4,
+                    "material": 0,
+                    "indices": 3,
+                    "attributes": {
+                        "POSITION": 0,
+                        "NORMAL": 1,
+                        "TEXCOORD_0": 2
+                    }
+                }
+            ]
+        }
+    ],
+    "nodes": [
+        {
+            "name": "pircrorhiza_kurroa_lo_0326062353_texture",
+            "children": [
+                1
+            ]
+        },
+        {
+            "name": "mesh_0",
+            "mesh": 0
+        }
+    ],
+    "samplers": [
+        {
+            "magFilter": 9729,
+            "minFilter": 9987
+        }
+    ],
+    "scenes": [
+        {
+            "nodes": [
+                0
+            ]
+        }
+    ],
+    "textures": [
+        {
+            "source": 0,
+            "sampler": 0
+        }
+    ],
+    "scene": 0
+}

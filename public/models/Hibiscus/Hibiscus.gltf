@@ -1,0 +1,1866 @@
+{
+  "accessors": [
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 836,
+      "max": [
+        0.80411696434021,
+        0.7694475054740906,
+        1.6067527532577515
+      ],
+      "min": [
+        -0.7416391372680664,
+        -0.766238808631897,
+        0.7057676315307617
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 10032,
+      "componentType": 5126,
+      "count": 836,
+      "max": [
+        0.9989917874336243,
+        0.9871928691864014,
+        0.9116325378417969
+      ],
+      "min": [
+        -0.9577234387397766,
+        -0.9971656203269958,
+        -0.4966445863246918
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5126,
+      "count": 836,
+      "max": [
+        0.9620660543441772,
+        0.9971664547920227,
+        0.9116321802139282,
+        1.0
+      ],
+      "min": [
+        -0.9989917874336243,
+        -0.9780253171920776,
+        -0.8760292530059814,
+        1.0
+      ],
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 836,
+      "max": [
+        1.0,
+        1.0
+      ],
+      "min": [
+        0.0,
+        0.0
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 6688,
+      "componentType": 5126,
+      "count": 836,
+      "max": [
+        1.0,
+        1.0
+      ],
+      "min": [
+        0.0,
+        0.0
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 13376,
+      "componentType": 5126,
+      "count": 836,
+      "max": [
+        1.0,
+        1.0
+      ],
+      "min": [
+        0.0,
+        0.0
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "componentType": 5125,
+      "count": 1392,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 20064,
+      "componentType": 5126,
+      "count": 8043,
+      "max": [
+        0.5803037285804749,
+        0.6457875967025757,
+        1.3945772647857666
+      ],
+      "min": [
+        -0.6534881591796875,
+        -0.6124173402786255,
+        -2.2825177878818204e-19
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 116580,
+      "componentType": 5126,
+      "count": 8043,
+      "max": [
+        0.9999902844429016,
+        0.9999684691429138,
+        0.9999280571937561
+      ],
+      "min": [
+        -0.9999845027923584,
+        -0.9999955892562866,
+        -0.9992300271987915
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 3,
+      "byteOffset": 13376,
+      "componentType": 5126,
+      "count": 8043,
+      "max": [
+        0.9999353885650635,
+        0.9999959468841553,
+        0.9997367262840271,
+        1.0
+      ],
+      "min": [
+        -0.9996940493583679,
+        -0.9999942779541016,
+        -0.999758780002594,
+        -1.0
+      ],
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 20064,
+      "componentType": 5126,
+      "count": 8043,
+      "max": [
+        1.6534825563430786,
+        1.1562186479568481
+      ],
+      "min": [
+        -0.3271482288837433,
+        -0.7958086729049683
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 84408,
+      "componentType": 5126,
+      "count": 8043,
+      "max": [
+        1.6534825563430786,
+        1.1562186479568481
+      ],
+      "min": [
+        -0.3271482288837433,
+        -0.7958086729049683
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 5568,
+      "componentType": 5125,
+      "count": 34086,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 213096,
+      "componentType": 5126,
+      "count": 1647,
+      "max": [
+        0.7947582006454468,
+        0.9042121171951294,
+        1.6032600402832031
+      ],
+      "min": [
+        -0.8841438889503479,
+        -0.7599697709083557,
+        0.5847463011741638
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 232860,
+      "componentType": 5126,
+      "count": 1647,
+      "max": [
+        0.9864532947540283,
+        0.9607024788856506,
+        1.0
+      ],
+      "min": [
+        -0.9891723394393921,
+        -0.9917463660240173,
+        0.016818344593048096
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 3,
+      "byteOffset": 142064,
+      "componentType": 5126,
+      "count": 1647,
+      "max": [
+        0.9998387694358826,
+        0.9999985694885254,
+        0.9876512885093689,
+        1.0
+      ],
+      "min": [
+        -0.9999943971633911,
+        -0.9999565482139587,
+        -0.9759417772293091,
+        1.0
+      ],
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 148752,
+      "componentType": 5126,
+      "count": 1647,
+      "max": [
+        1.0,
+        1.0
+      ],
+      "min": [
+        0.0,
+        0.0
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 161928,
+      "componentType": 5126,
+      "count": 1647,
+      "max": [
+        1.0,
+        1.0
+      ],
+      "min": [
+        0.0,
+        0.0
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 175104,
+      "componentType": 5126,
+      "count": 1647,
+      "max": [
+        1.0,
+        1.0
+      ],
+      "min": [
+        0.0,
+        0.0
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 141912,
+      "componentType": 5125,
+      "count": 4392,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 252624,
+      "componentType": 5126,
+      "count": 2826,
+      "max": [
+        0.7806223034858704,
+        0.9530903100967407,
+        1.6530810594558716
+      ],
+      "min": [
+        -0.8899279832839966,
+        -0.8151987791061401,
+        0.5882985591888428
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 286536,
+      "componentType": 5126,
+      "count": 2826,
+      "max": [
+        0.9995916485786438,
+        0.9997332692146301,
+        0.9999328255653381
+      ],
+      "min": [
+        -0.9995631575584412,
+        -0.9995085597038269,
+        -0.9045930504798889
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 3,
+      "byteOffset": 168416,
+      "componentType": 5126,
+      "count": 2826,
+      "max": [
+        0.9999014139175415,
+        0.9999873638153076,
+        0.9997654557228088,
+        1.0
+      ],
+      "min": [
+        -0.9993970394134521,
+        -0.9964286684989929,
+        -0.9995545148849487,
+        1.0
+      ],
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 188280,
+      "componentType": 5126,
+      "count": 2826,
+      "max": [
+        1.0,
+        1.0
+      ],
+      "min": [
+        0.0,
+        0.0
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 210888,
+      "componentType": 5126,
+      "count": 2826,
+      "max": [
+        1.0,
+        1.0
+      ],
+      "min": [
+        0.0,
+        0.0
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 233496,
+      "componentType": 5126,
+      "count": 2826,
+      "max": [
+        1.0,
+        1.0
+      ],
+      "min": [
+        0.0,
+        0.0
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 159480,
+      "componentType": 5125,
+      "count": 7536,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 320448,
+      "componentType": 5126,
+      "count": 9,
+      "max": [
+        0.2169405221939087,
+        -0.39082854986190796,
+        0.7663673758506775
+      ],
+      "min": [
+        0.10797297209501266,
+        -0.5048815608024597,
+        0.7373557090759277
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 320556,
+      "componentType": 5126,
+      "count": 9,
+      "max": [
+        0.6535197496414185,
+        0.49309778213500977,
+        0.9919207692146301
+      ],
+      "min": [
+        -0.30193549394607544,
+        -0.41284361481666565,
+        0.7428540587425232
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 3,
+      "byteOffset": 213632,
+      "componentType": 5126,
+      "count": 9,
+      "max": [
+        -0.49129238724708557,
+        0.6652303338050842,
+        0.5925366878509521,
+        1.0
+      ],
+      "min": [
+        -0.8061901926994324,
+        0.4788675606250763,
+        -0.3728620409965515,
+        1.0
+      ],
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 256104,
+      "componentType": 5126,
+      "count": 9,
+      "max": [
+        1.0,
+        1.0
+      ],
+      "min": [
+        0.0,
+        0.0
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 256176,
+      "componentType": 5126,
+      "count": 9,
+      "max": [
+        1.0,
+        1.0
+      ],
+      "min": [
+        0.0,
+        0.0
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 256248,
+      "componentType": 5126,
+      "count": 9,
+      "max": [
+        1.0,
+        1.0
+      ],
+      "min": [
+        0.0,
+        0.0
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 189624,
+      "componentType": 5125,
+      "count": 24,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 320664,
+      "componentType": 5126,
+      "count": 4180,
+      "max": [
+        0.7324365377426147,
+        0.7339914441108704,
+        1.5413129329681396
+      ],
+      "min": [
+        -0.758815348148346,
+        -0.658865749835968,
+        0.6484131217002869
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 370824,
+      "componentType": 5126,
+      "count": 4180,
+      "max": [
+        0.9981359243392944,
+        0.9998741149902344,
+        0.9998802542686462
+      ],
+      "min": [
+        -0.9963306188583374,
+        -0.9999247193336487,
+        -0.91665118932724
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 3,
+      "byteOffset": 213776,
+      "componentType": 5126,
+      "count": 4180,
+      "max": [
+        0.9999985694885254,
+        0.9988842606544495,
+        0.9961565732955933,
+        1.0
+      ],
+      "min": [
+        -0.9998846054077148,
+        -0.9976558685302734,
+        -0.997955858707428,
+        -1.0
+      ],
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 256320,
+      "componentType": 5126,
+      "count": 4180,
+      "max": [
+        1.0,
+        0.9900000095367432
+      ],
+      "min": [
+        0.0,
+        0.0
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 289760,
+      "componentType": 5126,
+      "count": 4180,
+      "max": [
+        1.0,
+        0.9900000095367432
+      ],
+      "min": [
+        0.0,
+        0.0
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 323200,
+      "componentType": 5126,
+      "count": 4180,
+      "max": [
+        1.0,
+        0.9900000095367432
+      ],
+      "min": [
+        0.0,
+        0.0
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 189720,
+      "componentType": 5125,
+      "count": 10440,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 420984,
+      "componentType": 5126,
+      "count": 6398,
+      "max": [
+        0.7966679334640503,
+        0.7436397671699524,
+        1.602288007736206
+      ],
+      "min": [
+        -0.7358525395393372,
+        -0.7612893581390381,
+        0.7061764597892761
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 497760,
+      "componentType": 5126,
+      "count": 6398,
+      "max": [
+        0.9992340207099915,
+        0.9991052150726318,
+        0.9985901117324829
+      ],
+      "min": [
+        -0.9998081922531128,
+        -0.9997302293777466,
+        -0.9998947978019714
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 3,
+      "byteOffset": 280656,
+      "componentType": 5126,
+      "count": 6398,
+      "max": [
+        0.9999737739562988,
+        0.9998041391372681,
+        0.9983892440795898,
+        1.0
+      ],
+      "min": [
+        -0.9999895095825195,
+        -0.9996432662010193,
+        -0.9998456239700317,
+        1.0
+      ],
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 356640,
+      "componentType": 5126,
+      "count": 6398,
+      "max": [
+        2.0,
+        0.9950000047683716
+      ],
+      "min": [
+        0.0,
+        0.004999999888241291
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 407824,
+      "componentType": 5126,
+      "count": 6398,
+      "max": [
+        2.0,
+        0.9950000047683716
+      ],
+      "min": [
+        0.0,
+        0.004999999888241291
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 459008,
+      "componentType": 5126,
+      "count": 6398,
+      "max": [
+        2.0,
+        0.9950000047683716
+      ],
+      "min": [
+        0.0,
+        0.004999999888241291
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 231480,
+      "componentType": 5125,
+      "count": 27030,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 574536,
+      "componentType": 5126,
+      "count": 1750,
+      "max": [
+        0.6594915986061096,
+        0.6863345503807068,
+        1.4714138507843018
+      ],
+      "min": [
+        -0.687688946723938,
+        -0.598067045211792,
+        0.7089235186576843
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 595536,
+      "componentType": 5126,
+      "count": 1750,
+      "max": [
+        0.9985014796257019,
+        0.9994022846221924,
+        0.9508897662162781
+      ],
+      "min": [
+        -0.9986215233802795,
+        -0.9984123110771179,
+        -0.9890119433403015
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 3,
+      "byteOffset": 383024,
+      "componentType": 5126,
+      "count": 1750,
+      "max": [
+        0.9988419413566589,
+        0.9984992146492004,
+        0.9997808933258057,
+        1.0
+      ],
+      "min": [
+        -0.9989656209945679,
+        -0.9977017641067505,
+        -0.999796450138092,
+        1.0
+      ],
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 510192,
+      "componentType": 5126,
+      "count": 1750,
+      "max": [
+        4.599999904632568,
+        0.7599999904632568
+      ],
+      "min": [
+        -0.4000000059604645,
+        0.0
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 524192,
+      "componentType": 5126,
+      "count": 1750,
+      "max": [
+        4.599999904632568,
+        0.7599999904632568
+      ],
+      "min": [
+        -0.4000000059604645,
+        0.0
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 538192,
+      "componentType": 5126,
+      "count": 1750,
+      "max": [
+        4.599999904632568,
+        0.7599999904632568
+      ],
+      "min": [
+        -0.4000000059604645,
+        0.0
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 339600,
+      "componentType": 5125,
+      "count": 7875,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 616536,
+      "componentType": 5126,
+      "count": 2198,
+      "max": [
+        0.8026055693626404,
+        0.7526023983955383,
+        1.6051760911941528
+      ],
+      "min": [
+        -0.7398335337638855,
+        -0.7640844583511353,
+        0.7112005352973938
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 642912,
+      "componentType": 5126,
+      "count": 2198,
+      "max": [
+        0.999946653842926,
+        0.9972385168075562,
+        0.9379876255989075
+      ],
+      "min": [
+        -0.9982859492301941,
+        -0.9989320039749146,
+        -0.986566424369812
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 552192,
+      "componentType": 5126,
+      "count": 2198,
+      "max": [
+        1.0,
+        1.0
+      ],
+      "min": [
+        0.0,
+        0.0
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 371100,
+      "componentType": 5125,
+      "count": 7380,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 669288,
+      "componentType": 5126,
+      "count": 2640,
+      "max": [
+        0.7350969314575195,
+        0.6748433709144592,
+        1.543025255203247
+      ],
+      "min": [
+        -0.6780496835708618,
+        -0.6992735862731934,
+        0.6945746541023254
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 700968,
+      "componentType": 5126,
+      "count": 2640,
+      "max": [
+        0.9999513030052185,
+        0.9980282187461853,
+        0.9993529915809631
+      ],
+      "min": [
+        -0.9981114864349365,
+        -0.9988270401954651,
+        -0.9818935394287109
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 569776,
+      "componentType": 5126,
+      "count": 2640,
+      "max": [
+        1.0,
+        0.04429323598742485
+      ],
+      "min": [
+        0.0,
+        0.0
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 400620,
+      "componentType": 5125,
+      "count": 9030,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 732648,
+      "componentType": 5126,
+      "count": 8242,
+      "max": [
+        0.72132408618927,
+        0.8751949071884155,
+        1.582097053527832
+      ],
+      "min": [
+        -0.8140500783920288,
+        -0.7394238710403442,
+        0.5359649658203125
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 831552,
+      "componentType": 5126,
+      "count": 8242,
+      "max": [
+        0.9998276233673096,
+        0.9999092817306519,
+        0.9959439635276794
+      ],
+      "min": [
+        -0.9994939565658569,
+        -0.9997013807296753,
+        -0.9672908186912537
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 3,
+      "byteOffset": 411024,
+      "componentType": 5126,
+      "count": 8242,
+      "max": [
+        0.9999740719795227,
+        0.999690055847168,
+        0.9976034164428711,
+        1.0
+      ],
+      "min": [
+        -0.9996912479400635,
+        -0.999813973903656,
+        -0.9997460246086121,
+        -1.0
+      ],
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 590896,
+      "componentType": 5126,
+      "count": 8242,
+      "max": [
+        1.0,
+        1.0
+      ],
+      "min": [
+        0.0,
+        0.0
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 656832,
+      "componentType": 5126,
+      "count": 8242,
+      "max": [
+        1.0,
+        1.0
+      ],
+      "min": [
+        0.0,
+        0.0
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 436740,
+      "componentType": 5125,
+      "count": 32634,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 930456,
+      "componentType": 5126,
+      "count": 7272,
+      "max": [
+        0.7353006601333618,
+        0.854790985584259,
+        1.5740876197814941
+      ],
+      "min": [
+        -0.8222509622573853,
+        -0.8199477791786194,
+        0.4020160436630249
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 1017720,
+      "componentType": 5126,
+      "count": 7272,
+      "max": [
+        0.9730572700500488,
+        0.9963506460189819,
+        0.9999990463256836
+      ],
+      "min": [
+        -0.9972468614578247,
+        -0.9802985191345215,
+        0.038186006247997284
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 3,
+      "byteOffset": 542896,
+      "componentType": 5126,
+      "count": 7272,
+      "max": [
+        0.9999991655349731,
+        0.9999850988388062,
+        0.7498687505722046,
+        1.0
+      ],
+      "min": [
+        -0.9999987483024597,
+        -0.9998793005943298,
+        -0.7319208383560181,
+        1.0
+      ],
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 722768,
+      "componentType": 5126,
+      "count": 7272,
+      "max": [
+        1.0,
+        1.0
+      ],
+      "min": [
+        0.0,
+        0.0
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 780944,
+      "componentType": 5126,
+      "count": 7272,
+      "max": [
+        1.0,
+        1.0
+      ],
+      "min": [
+        0.0,
+        0.0
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 839120,
+      "componentType": 5126,
+      "count": 7272,
+      "max": [
+        1.0,
+        1.0
+      ],
+      "min": [
+        0.0,
+        0.0
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 567276,
+      "componentType": 5125,
+      "count": 19392,
+      "type": "SCALAR"
+    }
+  ],
+  "asset": {
+    "extras": {
+      "author": "PlantCatalog (https://sketchfab.com/PlantCatalog)",
+      "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+      "source": "https://sketchfab.com/3d-models/realistic-hd-chinese-hibiscus-720-4517d6f8a28e492494e03cf1bee12ecf",
+      "title": "Realistic HD Chinese hibiscus (7/20)"
+    },
+    "generator": "Sketchfab-16.14.0",
+    "version": "2.0"
+  },
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 644844,
+      "name": "floatBufferViews",
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteLength": 897296,
+      "byteOffset": 644844,
+      "byteStride": 8,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 1104984,
+      "byteOffset": 1542140,
+      "byteStride": 12,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 659248,
+      "byteOffset": 2647124,
+      "byteStride": 16,
+      "name": "floatBufferViews",
+      "target": 34962
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 3306372,
+      "uri": "scene.bin"
+    }
+  ],
+  "images": [
+    {
+      "uri": "textures/Hibiscus_RS_genitals_baseColor.png"
+    },
+    {
+      "uri": "textures/Hibiscus_RS_genitals_normal.png"
+    },
+    {
+      "uri": "textures/Hibiscus_rs_bark_01_baseColor.png"
+    },
+    {
+      "uri": "textures/Hibiscus_rs_bark_01_normal.png"
+    },
+    {
+      "uri": "textures/Hibiscus_rs_leaf_02_baseColor.png"
+    },
+    {
+      "uri": "textures/Hibiscus_rs_leaf_02_normal.png"
+    },
+    {
+      "uri": "textures/Hibiscus_rs_leaf_03_baseColor.png"
+    },
+    {
+      "uri": "textures/Hibiscus_rs_leaf_04_baseColor.png"
+    },
+    {
+      "uri": "textures/Hibiscus_petal_01_baseColor.png"
+    },
+    {
+      "uri": "textures/Hibiscus_petal_01_normal.png"
+    },
+    {
+      "uri": "textures/Hibiscus_bud_baseColor.png"
+    },
+    {
+      "uri": "textures/Hibiscus_bud_normal.png"
+    },
+    {
+      "uri": "textures/Hibiscus_sepal_baseColor.png"
+    },
+    {
+      "uri": "textures/Hibiscus_sepal_normal.png"
+    },
+    {
+      "uri": "textures/Hibiscus_style_baseColor.png"
+    },
+    {
+      "uri": "textures/Hibiscus_Flw_stalk_baseColor.png"
+    },
+    {
+      "uri": "textures/Hibiscus_rs_twig_baseColor.png"
+    },
+    {
+      "uri": "textures/Hibiscus_rs_twig_normal.png"
+    },
+    {
+      "uri": "textures/Hibiscus_rs_leaf_01_baseColor.png"
+    }
+  ],
+  "materials": [
+    {
+      "alphaMode": "BLEND",
+      "doubleSided": true,
+      "name": "Hibiscus_RS_genitals",
+      "normalTexture": {
+        "index": 1
+      },
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 0
+        },
+        "metallicFactor": 0.0,
+        "roughnessFactor": 0.9375117949452161
+      }
+    },
+    {
+      "doubleSided": true,
+      "name": "Hibiscus_rs_bark_01",
+      "normalTexture": {
+        "index": 3
+      },
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 2
+        },
+        "metallicFactor": 0.0
+      }
+    },
+    {
+      "alphaMode": "BLEND",
+      "doubleSided": true,
+      "name": "Hibiscus_rs_leaf_02",
+      "normalTexture": {
+        "index": 5
+      },
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 4
+        },
+        "metallicFactor": 0.0,
+        "roughnessFactor": 0.8580932448506168
+      }
+    },
+    {
+      "alphaMode": "BLEND",
+      "doubleSided": true,
+      "name": "Hibiscus_rs_leaf_03",
+      "normalTexture": {
+        "index": 5
+      },
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 6
+        },
+        "metallicFactor": 0.0,
+        "roughnessFactor": 0.8580932448506168
+      }
+    },
+    {
+      "alphaMode": "BLEND",
+      "doubleSided": true,
+      "name": "Hibiscus_rs_leaf_04",
+      "normalTexture": {
+        "index": 5
+      },
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 7
+        },
+        "metallicFactor": 0.0,
+        "roughnessFactor": 0.8580932448506168
+      }
+    },
+    {
+      "alphaMode": "BLEND",
+      "doubleSided": true,
+      "name": "Hibiscus_petal_01",
+      "normalTexture": {
+        "index": 9
+      },
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 8
+        },
+        "metallicFactor": 0.0,
+        "roughnessFactor": 0.9375117949452161
+      }
+    },
+    {
+      "alphaMode": "BLEND",
+      "doubleSided": true,
+      "name": "Hibiscus_bud",
+      "normalTexture": {
+        "index": 11
+      },
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 10
+        },
+        "metallicFactor": 0.0,
+        "roughnessFactor": 0.9375117949452161
+      }
+    },
+    {
+      "alphaMode": "BLEND",
+      "doubleSided": true,
+      "name": "Hibiscus_sepal",
+      "normalTexture": {
+        "index": 13
+      },
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 12
+        },
+        "metallicFactor": 0.0,
+        "roughnessFactor": 0.8677035960295985
+      }
+    },
+    {
+      "doubleSided": true,
+      "name": "Hibiscus_style",
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 14
+        },
+        "metallicFactor": 0.0,
+        "roughnessFactor": 0.9375117949452161
+      }
+    },
+    {
+      "doubleSided": true,
+      "name": "Hibiscus_Flw_stalk",
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 15
+        },
+        "metallicFactor": 0.0,
+        "roughnessFactor": 0.8619887271862225
+      }
+    },
+    {
+      "doubleSided": true,
+      "name": "Hibiscus_rs_twig",
+      "normalTexture": {
+        "index": 17
+      },
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 16
+        },
+        "metallicFactor": 0.0,
+        "roughnessFactor": 0.866522364199735
+      }
+    },
+    {
+      "alphaMode": "BLEND",
+      "doubleSided": true,
+      "name": "Hibiscus_rs_leaf_01",
+      "normalTexture": {
+        "index": 5
+      },
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 18
+        },
+        "metallicFactor": 0.0,
+        "roughnessFactor": 0.8580932448506168
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "name": "Hibiscus_rosa_sinensis_HD_Hibiscus RS genitals_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 1,
+            "POSITION": 0,
+            "TANGENT": 2,
+            "TEXCOORD_0": 3,
+            "TEXCOORD_1": 4,
+            "TEXCOORD_2": 5
+          },
+          "indices": 6,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "Hibiscus_rosa_sinensis_HD_Hibiscus rs bark 01_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 8,
+            "POSITION": 7,
+            "TANGENT": 9,
+            "TEXCOORD_0": 10,
+            "TEXCOORD_1": 11
+          },
+          "indices": 12,
+          "material": 1,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "Hibiscus_rosa_sinensis_HD_Hibiscus rs leaf 02_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 14,
+            "POSITION": 13,
+            "TANGENT": 15,
+            "TEXCOORD_0": 16,
+            "TEXCOORD_1": 17,
+            "TEXCOORD_2": 18
+          },
+          "indices": 19,
+          "material": 2,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "Hibiscus_rosa_sinensis_HD_Hibiscus rs leaf 03_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 21,
+            "POSITION": 20,
+            "TANGENT": 22,
+            "TEXCOORD_0": 23,
+            "TEXCOORD_1": 24,
+            "TEXCOORD_2": 25
+          },
+          "indices": 26,
+          "material": 3,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "Hibiscus_rosa_sinensis_HD_Hibiscus rs leaf 04_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 28,
+            "POSITION": 27,
+            "TANGENT": 29,
+            "TEXCOORD_0": 30,
+            "TEXCOORD_1": 31,
+            "TEXCOORD_2": 32
+          },
+          "indices": 33,
+          "material": 4,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "Hibiscus_rosa_sinensis_HD_Hibiscus petal 01_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 35,
+            "POSITION": 34,
+            "TANGENT": 36,
+            "TEXCOORD_0": 37,
+            "TEXCOORD_1": 38,
+            "TEXCOORD_2": 39
+          },
+          "indices": 40,
+          "material": 5,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "Hibiscus_rosa_sinensis_HD_Hibiscus bud_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 42,
+            "POSITION": 41,
+            "TANGENT": 43,
+            "TEXCOORD_0": 44,
+            "TEXCOORD_1": 45,
+            "TEXCOORD_2": 46
+          },
+          "indices": 47,
+          "material": 6,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "Hibiscus_rosa_sinensis_HD_Hibiscus sepal_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 49,
+            "POSITION": 48,
+            "TANGENT": 50,
+            "TEXCOORD_0": 51,
+            "TEXCOORD_1": 52,
+            "TEXCOORD_2": 53
+          },
+          "indices": 54,
+          "material": 7,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "Hibiscus_rosa_sinensis_HD_Hibiscus style_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 56,
+            "POSITION": 55,
+            "TEXCOORD_0": 57
+          },
+          "indices": 58,
+          "material": 8,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "Hibiscus_rosa_sinensis_HD_Hibiscus Flw stalk_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 60,
+            "POSITION": 59,
+            "TEXCOORD_0": 61
+          },
+          "indices": 62,
+          "material": 9,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "Hibiscus_rosa_sinensis_HD_Hibiscus rs twig_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 64,
+            "POSITION": 63,
+            "TANGENT": 65,
+            "TEXCOORD_0": 66,
+            "TEXCOORD_1": 67
+          },
+          "indices": 68,
+          "material": 10,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "Hibiscus_rosa_sinensis_HD_Hibiscus rs leaf 01_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 70,
+            "POSITION": 69,
+            "TANGENT": 71,
+            "TEXCOORD_0": 72,
+            "TEXCOORD_1": 73,
+            "TEXCOORD_2": 74
+          },
+          "indices": 75,
+          "material": 11,
+          "mode": 4
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "children": [
+        1
+      ],
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.220446049250313e-16,
+        -1.0,
+        0.0,
+        0.0,
+        1.0,
+        2.220446049250313e-16,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "Sketchfab_model"
+    },
+    {
+      "children": [
+        2
+      ],
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "Hibiscus rosa-sinensis HD_Small tree mat 25_LOD0.fbx"
+    },
+    {
+      "children": [
+        3
+      ],
+      "name": "RootNode"
+    },
+    {
+      "children": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.220446049250313e-16,
+        -1.0,
+        0.0,
+        0.0,
+        1.0,
+        2.220446049250313e-16,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "Hibiscus_rosa_sinensis_HD"
+    },
+    {
+      "mesh": 0,
+      "name": "Hibiscus_rosa_sinensis_HD_Hibiscus RS genitals_0"
+    },
+    {
+      "mesh": 1,
+      "name": "Hibiscus_rosa_sinensis_HD_Hibiscus rs bark 01_0"
+    },
+    {
+      "mesh": 2,
+      "name": "Hibiscus_rosa_sinensis_HD_Hibiscus rs leaf 02_0"
+    },
+    {
+      "mesh": 3,
+      "name": "Hibiscus_rosa_sinensis_HD_Hibiscus rs leaf 03_0"
+    },
+    {
+      "mesh": 4,
+      "name": "Hibiscus_rosa_sinensis_HD_Hibiscus rs leaf 04_0"
+    },
+    {
+      "mesh": 5,
+      "name": "Hibiscus_rosa_sinensis_HD_Hibiscus petal 01_0"
+    },
+    {
+      "mesh": 6,
+      "name": "Hibiscus_rosa_sinensis_HD_Hibiscus bud_0"
+    },
+    {
+      "mesh": 7,
+      "name": "Hibiscus_rosa_sinensis_HD_Hibiscus sepal_0"
+    },
+    {
+      "mesh": 8,
+      "name": "Hibiscus_rosa_sinensis_HD_Hibiscus style_0"
+    },
+    {
+      "mesh": 9,
+      "name": "Hibiscus_rosa_sinensis_HD_Hibiscus Flw stalk_0"
+    },
+    {
+      "mesh": 10,
+      "name": "Hibiscus_rosa_sinensis_HD_Hibiscus rs twig_0"
+    },
+    {
+      "mesh": 11,
+      "name": "Hibiscus_rosa_sinensis_HD_Hibiscus rs leaf 01_0"
+    }
+  ],
+  "samplers": [
+    {
+      "magFilter": 9729,
+      "minFilter": 9987,
+      "wrapS": 33071,
+      "wrapT": 33071
+    },
+    {
+      "magFilter": 9729,
+      "minFilter": 9987,
+      "wrapS": 10497,
+      "wrapT": 10497
+    },
+    {
+      "magFilter": 9729,
+      "minFilter": 9987,
+      "wrapS": 10497,
+      "wrapT": 33071
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "name": "Sketchfab_Scene",
+      "nodes": [
+        0
+      ]
+    }
+  ],
+  "textures": [
+    {
+      "sampler": 0,
+      "source": 0
+    },
+    {
+      "sampler": 0,
+      "source": 1
+    },
+    {
+      "sampler": 1,
+      "source": 2
+    },
+    {
+      "sampler": 1,
+      "source": 3
+    },
+    {
+      "sampler": 0,
+      "source": 4
+    },
+    {
+      "sampler": 0,
+      "source": 5
+    },
+    {
+      "sampler": 0,
+      "source": 6
+    },
+    {
+      "sampler": 0,
+      "source": 7
+    },
+    {
+      "sampler": 1,
+      "source": 8
+    },
+    {
+      "sampler": 1,
+      "source": 9
+    },
+    {
+      "sampler": 2,
+      "source": 10
+    },
+    {
+      "sampler": 2,
+      "source": 11
+    },
+    {
+      "sampler": 1,
+      "source": 12
+    },
+    {
+      "sampler": 1,
+      "source": 13
+    },
+    {
+      "sampler": 1,
+      "source": 14
+    },
+    {
+      "sampler": 1,
+      "source": 15
+    },
+    {
+      "sampler": 1,
+      "source": 16
+    },
+    {
+      "sampler": 1,
+      "source": 17
+    },
+    {
+      "sampler": 0,
+      "source": 18
+    }
+  ]
+}
