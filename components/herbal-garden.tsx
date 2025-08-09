@@ -5,12 +5,12 @@ import { Canvas } from "@react-three/fiber"
 import { Environment, OrbitControls } from "@react-three/drei"
 import { Search, Menu, X, MapPin, ExternalLink, ShoppingBag } from "lucide-react"
 
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Separator } from "@/components/ui/separator"
-import { Badge } from "@/components/ui/badge"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import { Button } from "components/ui/button"
+import { Input } from "components/ui/input"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "components/ui/tabs"
+import { Separator } from "components/ui/separator"
+import { Badge } from "components/ui/badge"
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "components/ui/card"
 import {
   Dialog,
   DialogContent,
@@ -18,13 +18,13 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog"
+} from "components/ui/dialog"
 
-import Header from "@/components/header"
-import Footer from "@/components/footer"
-import PlantViewer from "@/components/plant-viewer"
-import PlantDetails from "@/components/plant-details"
-import LocalSellers from "@/components/local-sellers"
+import Header from "components/header"
+import Footer from "components/footer"
+import PlantViewer from "components/plant-viewer"
+import PlantDetails from "components/plant-details"
+import LocalSellers from "components/local-sellers"
 import { plantsData } from "@/data/plants-data"
 
 export default function HerbalGarden() {

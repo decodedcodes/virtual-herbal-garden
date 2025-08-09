@@ -1,4 +1,4 @@
-import HerbalGarden from "@/components/herbal-garden"
+import HerbalGarden from "components/herbal-garden"
 
 export default function GardenPage() {
   return (

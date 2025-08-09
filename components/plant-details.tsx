@@ -2,9 +2,9 @@
 
 import { useState } from "react"
 import { ChevronDown, ChevronUp } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Badge } from "@/components/ui/badge"
+import { Button } from "components/ui/button"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "components/ui/tabs"
+import { Badge } from "components/ui/badge"
 
 export default function PlantDetails({ plant, language = "english" }) {
   const [expanded, setExpanded] = useState(false)
