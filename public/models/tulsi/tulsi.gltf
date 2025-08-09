@@ -406,8 +406,9 @@
   ],
   "buffers": [
     {
-      "byteLength": 40686576,
-      "uri": "island_tree_02.bin"
+      "uri":"island_tree_02.bin",
+      "byteLength": 40686576
+      
     }
   ]
 }
